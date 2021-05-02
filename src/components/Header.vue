@@ -8,10 +8,10 @@
     </div>
   </header>
 </template>
-<script>
-export default {
-  name: "Header",
-};
+
+<script lang="ts">
+import Vue from "vue";
+export default Vue.extend({ name: "Header" });
 </script>
 
 <style scoped>
@@ -36,9 +36,9 @@ header {
   max-width: 1200px;
   margin: auto;
 }
-.container{
-    display: flex;
-    justify-content: flex-end;
-    padding:5px;
+.container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
 }
 </style>

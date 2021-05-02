@@ -51,7 +51,7 @@
           </div>
         </div>
         <div class="item-agents">
-          <div v-for="agent in agents" :key="agent.id">
+          <div v-for="agent in agents.agents" :key="agent.id">
             <agent :agent="agent"></agent>
           </div>
         </div>
@@ -61,14 +61,15 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { mapState, mapGetters } from "vuex";
-import Agent from "./Agent";
-import Footer from "./Footer";
-import Header from "./Header";
-import Navbar from "./Navbar";
+import Agent from "./Agent.vue";
+import Footer from "./Footer.vue";
+import Header from "./Header.vue";
+import Navbar from "./Navbar.vue";
 
-export default {
+import Vue from "vue";
+export default Vue.extend({
   components: { Agent, Footer, Header, Navbar },
   name: "Page",
   computed: {
@@ -79,7 +80,7 @@ export default {
       "getAgentCount",
     ]),
   },
-};
+});
 </script>
 
 <style scoped>

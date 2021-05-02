@@ -44,7 +44,7 @@
           {{ agent.status }}
         </div>
         <!-- -------------------- -->
-        <div class="ip" style="margin-right:10px;">
+        <div class="ip" style="margin-right: 10px">
           <i class="icomoon icon-info"></i>
           {{ agent.ip }}
         </div>
@@ -110,9 +110,10 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { mapActions, mapState } from "vuex";
-export default {
+import Vue from "vue";
+export default Vue.extend({
   name: "Agent",
   props: {
     agent: Object,
@@ -132,7 +133,7 @@ export default {
       "showAgentListPopUpDialog",
       "closeAgentListPopUpDialog",
     ]),
-    addResources(id, resources) {
+    addResources(id: number, resources: string) {
       this.addResourcesByAgentId({
         id,
         resources,
@@ -140,7 +141,7 @@ export default {
       this.value = "";
     },
   },
-};
+});
 </script>
 <style scoped>
 .item {
