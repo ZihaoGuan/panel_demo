@@ -84,7 +84,7 @@
           <div
             class="btn btn-trash"
             @click="
-              deleteResourcesByAgentId({ id: agent.id, resources: resource })
+              deleteResourcesByAgentId({ id: agent.id, resource: resource })
             "
           >
             {{ resource }}

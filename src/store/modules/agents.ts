@@ -15,6 +15,7 @@ interface Agent {
 interface ResourcesPayload {
     id: number
     resources: string
+    resource: string
 }
 
 export interface State {
@@ -82,12 +83,12 @@ const mutations = {
         }
     },
     deleteResourcesByAgentId: async (state: State, payload: ResourcesPayload) => {
-        const { id, resources } = payload
+        const { id, resource } = payload
         const jsonToUpdate = state.agents.find(agent => agent.id == id)
         if (jsonToUpdate) {
             const copy = JSON.parse(JSON.stringify(jsonToUpdate))
             copy['resources'] = copy['resources'].filter(
-                (e: string) => e !== resources
+                (e: string) => e !== resource
             )
             const res = await Vue.axios.put(`http://www.nekosaysmeow.cyou:4000/api/agents/${id}`, copy)
             jsonToUpdate['resources'] = res.data['resources']
@@ -103,7 +104,7 @@ const mutations = {
         Vue.set(state, "agentShowPopUp", null)
     }
 }
- 
+
 const actions = {
     loadAllAgents: (context: { commit: Commit }) => {
         context.commit('loadAllAgents')
