@@ -62,8 +62,7 @@
           ></i>
           <div
             class="popup-window white-bg"
-            ref="popupwindow"
-            :class="{ show: agent.id === agentShowPopUp }"
+            :class="{ show: agent.id == agentShowPopUp }"
             :id="'popup' + agent.id"
           >
             <p class="row">Seperate multiple resource name with commas</p>
@@ -85,7 +84,7 @@
           <div
             class="btn btn-trash"
             @click="
-              deleteResourcesByAgentId({ id: agent.id, resource: resource })
+              deleteResourcesByAgentId({ id: agent.id, resources: resource })
             "
           >
             {{ resource }}
@@ -127,7 +126,7 @@ export default Vue.extend({
     };
   },
   methods: {
-    ...mapActions([
+    ...mapActions('agents',[
       "deleteResourcesByAgentId",
       "addResourcesByAgentId",
       "showAgentListPopUpDialog",

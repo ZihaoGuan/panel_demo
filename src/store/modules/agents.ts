@@ -99,9 +99,11 @@ const mutations = {
         }
     },
     showAgentListPopUpDialog: (state: State, id: number) => {
+        //state.agentShowPopUp = id
         Vue.set(state, "agentShowPopUp", id)
     },
     closeAgentListPopUpDialog: (state: State) => {
+        //state.agentShowPopUp = null
         Vue.set(state, "agentShowPopUp", null)
     }
 }
@@ -125,6 +127,7 @@ const actions = {
 }
 
 export default {
+    namespaced: true,
     state,
     getters,
     actions,
