@@ -83,13 +83,14 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 main {
   margin-top: 45px;
   padding: 5px;
   margin-right: 0;
   margin-left: 300px;
 }
+
 .wrapper {
   max-width: 1200px;
   margin: auto;
@@ -111,23 +112,43 @@ main {
 .box-status {
   position: relative;
   text-align: center;
-}
 
-.box-status::before {
-  font-size: 144px;
-  position: absolute;
-  right: 0;
-  left: 0;
-  opacity: 20%;
-  line-height: 144px;
-}
+  &::before {
+    font-size: 144px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    opacity: 20%;
+    line-height: 144px;
+  }
 
-.box-status.box-building::before {
-  font-family: "cruise";
-  content: "\f013";
-  -webkit-animation: spin 2s linear infinite;
-  -moz-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+  &.box-building::before {
+    font-family: "cruise";
+    content: "\f013";
+    -webkit-animation: spin 2s linear infinite;
+    -moz-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+
+  &.box-idle::before {
+    font-family: "cruise";
+    content: "\f0f4";
+  }
+
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+  }
+
+  .number {
+    font-size: 48px;
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+  }
 }
 
 @-moz-keyframes spin {
@@ -135,11 +156,13 @@ main {
     -moz-transform: rotate(360deg);
   }
 }
+
 @-webkit-keyframes spin {
   100% {
     -webkit-transform: rotate(360deg);
   }
 }
+
 @keyframes spin {
   100% {
     -webkit-transform: rotate(360deg);
@@ -147,45 +170,26 @@ main {
   }
 }
 
-.box-status.box-idle::before {
-  font-family: "cruise";
-  content: "\f0f4";
-}
-
-.box-status .title {
-  font-size: 18px;
-  font-weight: bold;
-  position: absolute;
-  top: 5%;
-  left: 5%;
-}
-
-.box-status .number {
-  font-size: 48px;
-  position: absolute;
-  bottom: 10%;
-  right: 5%;
-}
-
 .box-flex {
   display: flex;
-}
 
-.box-flex .box-column {
-  flex-grow: 1;
-  flex-basis: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+  .box-column {
+    flex-grow: 1;
+    flex-basis: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-.box-flex .box-column .title {
-  padding: 20px 0;
-  font-size: 12px;
-}
-.box-flex .box-column .number {
-  padding: 20px 0;
-  font-size: 20px;
+    .title {
+      padding: 20px 0;
+      font-size: 12px;
+    }
+
+    .number {
+      padding: 20px 0;
+      font-size: 20px;
+    }
+  }
 }
 
 .control-bar {
@@ -193,25 +197,25 @@ main {
   margin: 20px;
   align-items: center;
   height: 50px;
-}
 
-.control-bar .type-tab {
-  height: 50px;
-  font-size: 14px;
-  line-height: 50px;
-  width: 80px;
-  text-align: center;
-  border-right: 1px solid grey;
-  border-color: rgba(0, 0, 0, 0.137);
-}
+  .type-tab {
+    height: 50px;
+    font-size: 14px;
+    line-height: 50px;
+    width: 80px;
+    text-align: center;
+    border-right: 1px solid grey;
+    border-color: rgba(0, 0, 0, 0.137);
 
-.control-bar .type-tab.active {
-  border-bottom: 3px solid;
-}
+    &.active {
+      border-bottom: 3px solid;
+    }
+  }
 
-.control-bar .layout-tab {
-  font-size: 20px;
-  padding: 0 10px;
+  .layout-tab {
+    font-size: 20px;
+    padding: 0 10px;
+  }
 }
 
 .item-agents {

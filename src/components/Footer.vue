@@ -9,7 +9,7 @@ import Vue from "vue";
 export default Vue.extend({ name: "Footer" });
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 footer {
   background-color: #ffffff;
   position: fixed;

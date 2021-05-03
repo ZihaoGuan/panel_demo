@@ -14,7 +14,7 @@ import Vue from "vue";
 export default Vue.extend({ name: "Header" });
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 header {
   position: fixed;
   top: 0;

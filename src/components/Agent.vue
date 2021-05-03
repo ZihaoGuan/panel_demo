@@ -142,7 +142,7 @@ export default Vue.extend({
   },
 });
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .item {
   display: flex;
   flex-direction: row;
@@ -158,37 +158,39 @@ img.osicons {
 
 .popup {
   position: relative;
+
+  .popup-window {
+    visibility: hidden;
+    width: 570px;
+    color: #fff;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 0%;
+    border: 2px solid #00b4cf;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 4px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent #00b4cf transparent;
+    }
+  }
+
+  .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
 }
 
 /* The actual popup */
-.popup .popup-window {
-  visibility: hidden;
-  width: 570px;
-  color: #fff;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  top: 125%;
-  left: 0%;
-  border: 2px solid #00b4cf;
-}
 
 /* Popup arrow */
-.popup .popup-window::after {
-  content: "";
-  position: absolute;
-  bottom: 100%;
-  left: 4px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent #00b4cf transparent;
-}
-
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
-}
 
 .row {
   padding: 10px;

@@ -86,13 +86,9 @@ const mutations = {
         const jsonToUpdate = state.agents.find(agent => agent.id == id)
         if (jsonToUpdate) {
             const copy = JSON.parse(JSON.stringify(jsonToUpdate))
-            const len = copy['resources'].length
-            for (let i = 0; i <= len; i++) {
-                if (copy['resources'][i] === resources) {
-                    copy['resources'].splice(i, 1)
-                    break
-                }
-            }
+            copy['resources'] = copy['resources'].filter(
+                (e: string) => e !== resources
+            )
             const res = await Vue.axios.put(`http://www.nekosaysmeow.cyou:4000/api/agents/${id}`, copy)
             jsonToUpdate['resources'] = res.data['resources']
             //Vue.set(state, 'agents', state.agents)
@@ -107,7 +103,7 @@ const mutations = {
         Vue.set(state, "agentShowPopUp", null)
     }
 }
-
+ 
 const actions = {
     loadAllAgents: (context: { commit: Commit }) => {
         context.commit('loadAllAgents')
