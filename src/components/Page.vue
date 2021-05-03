@@ -85,7 +85,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 main {
-  margin-top: 45px;
+  margin-top: 50px;
   padding: 5px;
   margin-right: 0;
   margin-left: 300px;

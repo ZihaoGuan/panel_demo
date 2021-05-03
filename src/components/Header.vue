@@ -40,5 +40,6 @@ header {
   display: flex;
   justify-content: flex-end;
   padding: 5px;
+  margin: 0 20px;
 }
 </style>

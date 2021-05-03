@@ -54,9 +54,9 @@
         </div>
       </div>
       <div class="row">
-        <div class="btn popup">
+        <div class="btn-square popup light-cyan-bg">
           <i
-            class="icomoon icon-plus light-cyan-bg"
+            class="icomoon icon-plus "
             style="color: white"
             @click="showAgentListPopUpDialog(agent.id)"
           ></i>
@@ -96,8 +96,8 @@
         </div>
         <div
           v-if="agent.status === 'building'"
-          class="green-bg white-text"
-          style="font: 14; margin-left: auto"
+          class="btn-square light-cyan-bg white-text"
+          style="margin-left: auto"
         >
           <i
             class="icomoon icon-deny"
@@ -207,10 +207,18 @@ img.osicons {
   justify-content: space-between;
 }
 
-.btn.popup i {
-  height: 18px;
-  padding: 0 3px;
+.btn-square{
+  height: 30px;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  padding:0 10px;
+}
+
+.btn-square i {
+  height: 30px;
   font-size: 18px;
+  vertical-align: middle;
 }
 
 .btn-trash {

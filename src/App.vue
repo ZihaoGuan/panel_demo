@@ -15,9 +15,11 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+$dark-grey-color:#e1e4e6;
+
 body {
-  background-color: #e1e4e6;
+  background-color: $dark-grey-color;
 }
 * {
   padding: 0;
@@ -41,7 +43,7 @@ body {
 }
 
 .dark-grey-bg {
-  background-color: #e1e4e6;
+  background-color: $dark-grey-color;
 }
 
 .orange-bg {
