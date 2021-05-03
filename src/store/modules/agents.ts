@@ -59,7 +59,7 @@ const getters = {
 
 const mutations = {
     loadAllAgents: (state: State) => {
-        Vue.axios.get("http://test.nekosaysmeow.cyou:4000/api/agents").then((response) => {
+        Vue.axios.get("http://www.nekosaysmeow.cyou:4000/api/agents").then((response) => {
             console.log(response.data)
             state.agents = response.data
             //Vue.set(state, 'agents', response.data)
@@ -76,7 +76,7 @@ const mutations = {
                     copy['resources'].push(element)
                 }
             });
-            const res = await Vue.axios.put(`http://test.nekosaysmeow.cyou:4000/api/agents/${id}`, copy)
+            const res = await Vue.axios.put(`http://www.nekosaysmeow.cyou:4000/api/agents/${id}`, copy)
             jsonToUpdate['resources'] = res.data['resources']
             //Vue.set(state, 'agents', state.agents)
         }
@@ -93,7 +93,7 @@ const mutations = {
                     break
                 }
             }
-            const res = await Vue.axios.put(`http://test.nekosaysmeow.cyou:4000/api/agents/${id}`, copy)
+            const res = await Vue.axios.put(`http://www.nekosaysmeow.cyou:4000/api/agents/${id}`, copy)
             jsonToUpdate['resources'] = res.data['resources']
             //Vue.set(state, 'agents', state.agents)
         }
