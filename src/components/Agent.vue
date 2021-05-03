@@ -30,7 +30,7 @@
     <div class="column">
       <div class="row row-1">
         <div class="name light-cyan-text">
-          <i class="icomoon icon-desktop"></i>
+          <i class="icomoon icon-desktop i-16"></i>
           {{ agent.name }}
         </div>
         <!-- -------------------- -->
@@ -45,18 +45,18 @@
         </div>
         <!-- -------------------- -->
         <div class="ip" style="margin-right: 10px">
-          <i class="icomoon icon-info"></i>
+          <i class="icomoon icon-info i-16"></i>
           {{ agent.ip }}
         </div>
         <div class="location">
-          <i class="icomoon icon-folder"></i>
+          <i class="icomoon icon-folder i-16"></i>
           {{ agent.location }}
         </div>
       </div>
       <div class="row">
-        <div class="btn-square popup light-cyan-bg">
+        <div class="btn-square btn-add popup light-cyan-bg">
           <i
-            class="icomoon icon-plus "
+            class="icomoon icon-plus i-16"
             style="color: white"
             @click="showAgentListPopUpDialog(agent.id)"
           ></i>
@@ -80,30 +80,28 @@
             </div>
           </div>
         </div>
-        <div v-for="resource in agent.resources" :key="resource">
-          <div
-            class="btn btn-trash"
-            @click="
-              deleteResourcesByAgentId({ id: agent.id, resource: resource })
-            "
-          >
-            {{ resource }}
-            <i
-              class="icomoon icon-trash"
-              style="font-size: 14px; color: white"
-            ></i>
-          </div>
+        <div
+          v-for="resource in agent.resources"
+          :key="resource"
+          class="btn-square"
+          style="background-color: #efefef"
+          @click="
+            deleteResourcesByAgentId({ id: agent.id, resource: resource })
+          "
+        >
+          {{ resource }}
+          <i class="icomoon icon-trash i-16"></i>
         </div>
         <div
           v-if="agent.status === 'building'"
-          class="btn-square light-cyan-bg white-text"
+          class="btn-square rightmost light-cyan-bg white-text"
           style="margin-left: auto"
         >
           <i
             class="icomoon icon-deny"
-            style="font-size: 14px; color: white"
+            style="color: white"
           ></i>
-          deny
+          Deny
         </div>
       </div>
     </div>
@@ -118,7 +116,7 @@ export default Vue.extend({
     agent: Object,
   },
   computed: {
-    ...mapState('agents',["agentShowPopUp"]),
+    ...mapState("agents", ["agentShowPopUp"]),
   },
   data() {
     return {
@@ -126,7 +124,7 @@ export default Vue.extend({
     };
   },
   methods: {
-    ...mapActions('agents',[
+    ...mapActions("agents", [
       "deleteResourcesByAgentId",
       "addResourcesByAgentId",
       "showAgentListPopUpDialog",
@@ -197,9 +195,9 @@ img.osicons {
 }
 
 .row-1 i {
-  font-size: 16px;
   color: grey;
   margin-right: 7px;
+  vertical-align: middle;
 }
 
 .column {
@@ -207,24 +205,24 @@ img.osicons {
   justify-content: space-between;
 }
 
-.btn-square{
+.btn-square {
   height: 30px;
   font-size: 14px;
   line-height: 30px;
   text-align: center;
-  padding:0 10px;
+  padding: 0 10px;
+  margin-right: 10px;
 }
 
 .btn-square i {
   height: 30px;
-  font-size: 18px;
   vertical-align: middle;
 }
 
-.btn-trash {
-  background-color: #efefef;
-  height: 18px;
-  margin-left: 8px;
+
+.rightmost {
+  margin-left: auto !important;
+  margin-right: 0 !important;
 }
 
 .status {

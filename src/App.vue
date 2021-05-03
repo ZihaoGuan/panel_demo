@@ -30,6 +30,14 @@ body {
   font-size: 14px;
 }
 
+.i-16 {
+  font-size: 16px;
+}
+
+.i-20{
+  font-size: 20px;
+}
+
 .white-bg {
   background-color: white;
 }
