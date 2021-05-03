@@ -118,7 +118,7 @@ export default Vue.extend({
     agent: Object,
   },
   computed: {
-    ...mapState(["agentShowPopUp"]),
+    ...mapState('agents',["agentShowPopUp"]),
   },
   data() {
     return {
