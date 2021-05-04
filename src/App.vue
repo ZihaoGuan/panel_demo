@@ -23,8 +23,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-$dark-grey-color: #e1e4e6;
-$dimgray-color: #435466;
 body {
   background-color: $dark-grey-color;
 }
@@ -54,7 +52,7 @@ body {
 }
 
 .light-grey-bg {
-  background-color: #f3f3f3;
+  background-color: $light-grey-color;
 }
 
 .dark-grey-bg {
@@ -62,27 +60,27 @@ body {
 }
 
 .orange-bg {
-  background-color: #ff9a2a;
+  background-color: $orange-color;
 }
 
 .green-bg {
-  background-color: #7fbc39;
+  background-color: $green-color;
 }
 
 .light-cyan-bg {
-  background-color: #00b4cf;
+  background-color: $light-cyan-color;
 }
 
 .light-cyan-text {
-  color: #00b4cf;
+  color: $light-cyan-color;
 }
 
 .dark-cyan-bg {
-  background-color: #01869a;
+  background-color: $dark-cyan-color;
 }
 
 .slategray-bg {
-  background-color: #2d4054;
+  background-color: $slategray-color;
 }
 
 .dimgray-bg {

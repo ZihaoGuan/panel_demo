@@ -2,6 +2,7 @@
   <header class="white-bg">
     <div class="wrapper">
       <div class="container">
+        <div class="avatar"></div>
         <img src="../assets/logo/logo.svg" class="logo" />
         <img src="../assets/logo/avatar.jpg" class="avatar" />
       </div>
@@ -22,9 +23,6 @@ header {
   z-index: 100;
 }
 .logo {
-  transform: translateX(-50%);
-  position: absolute;
-  left: 50%;
   height: 40px;
 }
 .avatar {
@@ -38,8 +36,10 @@ header {
 }
 .container {
   display: flex;
-  justify-content: flex-end;
-  padding: 5px;
+  justify-content: space-between;
+  padding: 0 5px;
   margin: 0 20px;
+  height:60px;
+  align-items: center;
 }
 </style>
