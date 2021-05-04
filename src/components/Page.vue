@@ -142,7 +142,7 @@ main {
     position: absolute;
     right: 0;
     left: 0;
-    opacity: 20%;
+    opacity: 0.2;
     line-height: 144px;
   }
 
