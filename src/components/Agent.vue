@@ -56,7 +56,7 @@
       <div class="row">
         <div class="btn-square btn-add popup light-cyan-bg">
           <i
-            class="icomoon icon-plus i-16"
+            class="icomoon icon-plus i-16 btn"
             style="color: white"
             @click="showAgentListPopUpDialog(agent.id)"
           ></i>
@@ -73,10 +73,18 @@
               placeholder="Input Value"
             />
             <div class="row">
-              <button @click="addResources(agent.id, value)">
+              <div
+                class="btn-square light-cyan-bg white-text btn"
+                @click="addResources(agent.id, value)"
+              >
                 Add Resources
-              </button>
-              <button @click="closeAgentListPopUpDialog()">Cancel</button>
+              </div>
+              <div
+                class="btn-square dimgray-bg white-text btn"
+                @click="closeAgentListPopUpDialog()"
+              >
+                Cancel
+              </div>
             </div>
           </div>
         </div>
@@ -85,22 +93,20 @@
           :key="resource"
           class="btn-square"
           style="background-color: #efefef"
-          @click="
-            deleteResourcesByAgentId({ id: agent.id, resource: resource })
-          "
         >
           {{ resource }}
-          <i class="icomoon icon-trash i-16"></i>
+          <i
+            class="icomoon icon-trash i-16 btn"
+            @click="
+              deleteResourcesByAgentId({ id: agent.id, resource: resource })
+            "
+          ></i>
         </div>
         <div
           v-if="agent.status === 'building'"
           class="btn-square rightmost light-cyan-bg white-text"
-          style="margin-left: auto"
         >
-          <i
-            class="icomoon icon-deny"
-            style="color: white"
-          ></i>
+          <i class="icomoon icon-deny" style="color: white"></i>
           Deny
         </div>
       </div>
@@ -136,6 +142,7 @@ export default Vue.extend({
         resources,
       });
       this.value = "";
+      this.closeAgentListPopUpDialog();
     },
   },
 });
@@ -214,11 +221,14 @@ img.osicons {
   margin-right: 10px;
 }
 
+.btn {
+  cursor: pointer;
+}
+
 .btn-square i {
   height: 30px;
   vertical-align: middle;
 }
-
 
 .rightmost {
   margin-left: auto !important;
