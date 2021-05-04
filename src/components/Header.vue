@@ -6,6 +6,16 @@
         <div class="logo"><img src="../assets/logo/logo.svg" /></div>
         <div class="avatar">
           <img src="../assets/logo/avatar.jpg" />
+          <i
+            class="icomoon icon-angle-down"
+            style="
+              font-size: 26px;
+              line-height: 40px;
+              vertical-align: text-bottom;
+              margin: 0 10px;
+            "
+          >
+          </i>
           <ul class="dropdown">
             <li>
               <a><i class="icomoon icon-id-card"></i><span>Profile</span></a>
@@ -56,6 +66,9 @@ header {
     transition: all 0.5s ease;
     right: 0;
     display: none;
+    -moz-box-shadow: 0 3px 5px 2px #ccc;
+    -webkit-box-shadow: 0 3px 5px 2px #ccc;
+    box-shadow: 0 3px 5px 2px #ccc;
   }
 
   li {
@@ -68,8 +81,8 @@ header {
       text-decoration: none;
       display: flex;
       align-items: center;
-      i{
-        width:10%;
+      i {
+        width: 10%;
       }
       span {
         margin-left: 20px;
