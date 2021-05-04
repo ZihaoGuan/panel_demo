@@ -24,7 +24,7 @@ export default Vue.extend({
 
 <style lang="scss">
 $dark-grey-color: #e1e4e6;
-
+$dimgray-color: #435466;
 body {
   background-color: $dark-grey-color;
 }
@@ -86,7 +86,7 @@ body {
 }
 
 .dimgray-bg {
-  background-color: #435466;
+  background-color: $dimgray-color;
 }
 
 .column {

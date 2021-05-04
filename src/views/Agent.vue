@@ -69,7 +69,7 @@ import Navbar from "../components/Navbar.vue";
 
 import Vue from "vue";
 export default Vue.extend({
-  components: { AgentItem,  Navbar },
+  components: { AgentItem, Navbar },
   name: "Agent",
   computed: {
     ...mapState("agents", ["agents"]),
@@ -101,7 +101,6 @@ main {
 }
 
 .box {
-  color: #7df7a1;
   margin: 20px;
   flex-grow: 1;
   flex-basis: 0;
@@ -132,7 +131,7 @@ main {
 .box-status {
   position: relative;
   text-align: center;
-
+  
   &::before {
     font-size: 144px;
     position: absolute;
@@ -154,6 +153,10 @@ main {
   &.box-idle::before {
     font-family: "cruise";
     content: "\f0f4";
+  }
+
+  span{
+      color: white;
   }
 
   .title {
@@ -233,7 +236,7 @@ main {
     text-align: center;
     border-right: 1px solid grey;
     border-color: rgba(0, 0, 0, 0.137);
-
+    cursor: pointer;
     &.active {
       border-bottom: 3px solid;
     }

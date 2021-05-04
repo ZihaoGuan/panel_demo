@@ -36,23 +36,22 @@ nav {
     position: sticky;
     top: 0;
     height: 100vh;
-
     .tab {
-      display: block;
+      display: flex;
       height: 45px;
       padding-left: 20px;
       cursor: pointer;
-
+      align-items: center;
       span{
         margin-left:20px;
       }
       i,span {
-        vertical-align: middle;
         color: #ccc;
       }
 
       &:hover {
         color: #00b4cf;
+        background-color: #435466;
         i,span {
           color: #00b4cf;
         }
