@@ -119,7 +119,7 @@
 import { mapActions, mapState } from "vuex";
 import Vue from "vue";
 export default Vue.extend({
-  name: "Agent",
+  name: "AgentItem",
   props: {
     agent: Object,
   },

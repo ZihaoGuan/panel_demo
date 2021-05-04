@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <div class="wrapper">
       <Navbar />
       <main>
@@ -55,26 +54,23 @@
         </div>
         <div class="item-agents">
           <div v-for="agent in agents" :key="agent.id">
-            <agent :agent="agent"></agent>
+            <AgentItem :agent="agent"></AgentItem>
           </div>
         </div>
       </main>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import { mapState, mapGetters } from "vuex";
-import Agent from "./Agent.vue";
-import Footer from "./Footer.vue";
-import Header from "./Header.vue";
-import Navbar from "./Navbar.vue";
+import AgentItem from "../components/AgentItem.vue";
+import Navbar from "../components/Navbar.vue";
 
 import Vue from "vue";
 export default Vue.extend({
-  components: { Agent, Footer, Header, Navbar },
-  name: "Page",
+  components: { AgentItem,  Navbar },
+  name: "Agent",
   computed: {
     ...mapState("agents", ["agents"]),
     ...mapGetters("agents", [
@@ -151,7 +147,7 @@ main {
     content: "\f013";
     -webkit-animation: spin 2s linear infinite;
     -moz-animation: spin 2s linear infinite;
-    -o-keyframes: spin 2s linear infinite; 
+    -o-keyframes: spin 2s linear infinite;
     animation: spin 2s linear infinite;
   }
 
@@ -176,10 +172,9 @@ main {
   }
 }
 
-
 @-moz-keyframes spin {
   100% {
-    -moz-transform: rotate(360deg); 
+    -moz-transform: rotate(360deg);
   }
 }
 
@@ -201,7 +196,6 @@ main {
     transform: rotate(360deg);
   }
 }
-
 
 .box-flex {
   display: flex;

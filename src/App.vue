@@ -1,22 +1,29 @@
 <template>
   <div id="app">
-    <Page />
+    <Header />
+    <Agent />
+    <Footer />
   </div>
 </template>
 
-<script>
-import Page from "./components/Page";
+<script lang="ts">
+import Agent from "./views/Agent.vue";
+import Footer from "./components/Footer.vue";
+import Header from "./components/Header.vue";
 
-export default {
+import Vue from "vue";
+export default Vue.extend({
   name: "App",
   components: {
-    Page,
+    Agent,
+    Footer,
+    Header,
   },
-};
+});
 </script>
 
 <style lang="scss">
-$dark-grey-color:#e1e4e6;
+$dark-grey-color: #e1e4e6;
 
 body {
   background-color: $dark-grey-color;
@@ -34,7 +41,7 @@ body {
   font-size: 16px;
 }
 
-.i-20{
+.i-20 {
   font-size: 20px;
 }
 
@@ -42,8 +49,8 @@ body {
   background-color: white;
 }
 
-.white-text{
-  color:white
+.white-text {
+  color: white;
 }
 
 .light-grey-bg {
@@ -95,6 +102,4 @@ body {
 .text-center {
   text-align: center;
 }
-
-
 </style>
