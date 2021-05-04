@@ -41,6 +41,9 @@ header {
   top: 0;
   width: 100%;
   z-index: 100;
+  -moz-box-shadow: 0 1px 5px 1px gray;
+  -webkit-box-shadow: 0 1px 5px 1px gray;
+  box-shadow: 0 1px 5px 1px gray;
 }
 .logo {
   img {

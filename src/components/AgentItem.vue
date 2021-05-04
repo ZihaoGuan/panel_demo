@@ -175,6 +175,9 @@ img.osicons {
     top: 125%;
     left: 0%;
     border: 2px solid $light-cyan-color;
+    -moz-box-shadow: 0 3px 5px 2px #ccc;
+    -webkit-box-shadow: 0 3px 5px 2px #ccc;
+    box-shadow: 0 3px 5px 2px #ccc;
 
     &::after {
       content: "";

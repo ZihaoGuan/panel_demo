@@ -16,5 +16,8 @@ footer {
   bottom: 0;
   width: 100%;
   text-align: center;
+  -moz-box-shadow: 0 3px 5px 2px gray;
+  -webkit-box-shadow: 0 3px 5px 2px gray;
+  box-shadow: 0 3px 5px 2px gray;
 }
 </style>
