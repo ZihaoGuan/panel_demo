@@ -67,7 +67,12 @@
           >
             <p class="row">Seperate multiple resource name with commas</p>
             <div class="row">
-              <input style ="width:100%" type="text" v-model="value" placeholder="Input Value" />
+              <input
+                style="width: 100%"
+                type="text"
+                v-model="value"
+                placeholder="Input Value"
+              />
             </div>
             <div class="row">
               <div
@@ -175,11 +180,18 @@ img.osicons {
     &::after {
       content: "";
       position: absolute;
-      bottom: 100%;
-      left: 4px;
-      border-width: 5px;
-      border-style: solid;
-      border-color: transparent transparent #00b4cf transparent;
+      top: -7.5px;
+      left: 7.5px;
+      width: 10px;
+      height: 10px;
+      background-color: white;
+      transform: rotate(225deg);
+      -webkit-transform: rotate(225deg);
+      -moz-transform: rotate(225deg);
+      -o-transform: rotate(225deg);
+      -ms-transform: rotate(225deg);
+      border-right: 2px solid #00b4cf;
+      border-bottom: 2px solid #00b4cf;
     }
   }
 
