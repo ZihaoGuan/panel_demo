@@ -42,7 +42,10 @@
           <div class="type-tab active">All</div>
           <div class="type-tab">Physical</div>
           <div class="type-tab">Virtual</div>
-          <div>search</div>
+          <div class="search-box-container">
+            <i class="icomoon icon-search i-20"></i>
+            <input class="search-box" />
+          </div>
           <div class="layout-tab" style="margin-left: auto">
             <i class="icomoon icon-th-card"></i>
           </div>
@@ -74,7 +77,7 @@ export default Vue.extend({
   name: "Page",
   computed: {
     ...mapState("agents", ["agents"]),
-    ...mapGetters('agents',[
+    ...mapGetters("agents", [
       "getAgentCountByStatus",
       "getAgentCountByType",
       "getAgentCount",
@@ -107,6 +110,27 @@ main {
   flex-grow: 1;
   flex-basis: 0;
   height: 144px;
+}
+
+.search-box-container {
+  position: relative;
+  border: 1px solid #ccc;
+  margin: 0 24px;
+}
+
+.search-box-container i {
+  padding: 0.5rem;
+  vertical-align: middle;
+}
+
+.search-box {
+  border: none;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  flex: 1;
+
+  &:focus{
+     outline: none;
+  }
 }
 
 .box-status {

@@ -66,12 +66,9 @@
             :id="'popup' + agent.id"
           >
             <p class="row">Seperate multiple resource name with commas</p>
-            <input
-              class="row"
-              type="text"
-              v-model="value"
-              placeholder="Input Value"
-            />
+            <div class="row">
+              <input style ="width:100%" type="text" v-model="value" placeholder="Input Value" />
+            </div>
             <div class="row">
               <div
                 class="btn-square light-cyan-bg white-text btn"
@@ -193,12 +190,8 @@ img.osicons {
   }
 }
 
-/* The actual popup */
-
-/* Popup arrow */
-
 .row {
-  padding: 10px;
+  padding: 5px 10px;
 }
 
 .row-1 i {
