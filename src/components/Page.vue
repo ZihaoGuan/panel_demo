@@ -128,8 +128,8 @@ main {
   padding: 0.5rem 0.5rem 0.5rem 0;
   flex: 1;
 
-  &:focus{
-     outline: none;
+  &:focus {
+    outline: none;
   }
 }
 
@@ -151,6 +151,7 @@ main {
     content: "\f013";
     -webkit-animation: spin 2s linear infinite;
     -moz-animation: spin 2s linear infinite;
+    -o-keyframes: spin 2s linear infinite; 
     animation: spin 2s linear infinite;
   }
 
@@ -178,12 +179,21 @@ main {
 @-moz-keyframes spin {
   100% {
     -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @-webkit-keyframes spin {
   100% {
     -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes spin {
+  100% {
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
