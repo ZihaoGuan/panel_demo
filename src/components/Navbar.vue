@@ -1,13 +1,22 @@
 <template>
   <nav class="slategray-bg">
-    <div class="a-container">
-      <a href="#" class="dashboard">
+    <div class="tab-container">
+      <div class="tab">
         <i class="icomoon icon-dashboard" style="font-size: 30px"></i>
-        DASHBOARD
-      </a>
-      <a href="#" class="agent">AGENT</a>
-      <a href="#" class="myCruise">MY CRUISE</a>
-      <a href="#" class="help">HelP</a>
+        <span>DASHBOARD</span>
+      </div>
+      <div class="tab">
+        <i class="icomoon icon-sitemap" style="font-size: 30px"></i>
+        <span>AGENT</span>
+      </div>
+      <div class="tab">
+        <i class="icomoon icon-boat" style="font-size: 30px"></i>
+        <span>MY CRUISE</span>
+      </div>
+      <div class="tab">
+        <i class="icomoon icon-life-bouy" style="font-size: 30px"></i>
+        <span>HELP</span>
+      </div>
     </div>
   </nav>
 </template>
@@ -21,27 +30,34 @@ export default Vue.extend({ name: "Navbar" });
 nav {
   position: fixed;
   width: 300px;
+  padding: 20px 0;
 
-  .a-container {
+  .tab-container {
     position: sticky;
     top: 0;
     height: 100vh;
-  }
 
-  a {
-    display: block;
-    height: 45px;
-    text-decoration-line: none;
-    color: #ccc;
-    font: 24;
-  }
+    .tab {
+      display: block;
+      height: 45px;
+      padding-left: 20px;
+      cursor: pointer;
 
-  i {
-    color: white;
-  }
+      span{
+        margin-left:20px;
+      }
+      i,span {
+        vertical-align: middle;
+        color: #ccc;
+      }
 
-  a:hover, i:hover {
-    color: #00b4cf;
+      &:hover {
+        color: #00b4cf;
+        i,span {
+          color: #00b4cf;
+        }
+      }
+    }
   }
 }
 </style>
