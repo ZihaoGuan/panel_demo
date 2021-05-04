@@ -2,19 +2,19 @@
   <nav class="slategray-bg">
     <div class="tab-container">
       <div class="tab">
-        <i class="icomoon icon-dashboard" style="font-size: 30px"></i>
+        <i class="icomoon icon-dashboard"></i>
         <span>DASHBOARD</span>
       </div>
       <div class="tab">
-        <i class="icomoon icon-sitemap" style="font-size: 30px"></i>
+        <i class="icomoon icon-sitemap"></i>
         <span>AGENT</span>
       </div>
       <div class="tab">
-        <i class="icomoon icon-boat" style="font-size: 30px"></i>
+        <i class="icomoon icon-boat"></i>
         <span>MY CRUISE</span>
       </div>
       <div class="tab">
-        <i class="icomoon icon-life-bouy" style="font-size: 30px"></i>
+        <i class="icomoon icon-life-bouy"></i>
         <span>HELP</span>
       </div>
     </div>
@@ -42,18 +42,23 @@ nav {
       padding-left: 20px;
       cursor: pointer;
       align-items: center;
-      span{
-        margin-left:20px;
+      span {
+        margin-left: 20px;
       }
-      i,span {
+      i {
+        font-size: 30px;
+      }
+      i,
+      span {
         color: #ccc;
       }
 
       &:hover {
-        color: #00b4cf;
-        background-color: #435466;
-        i,span {
-          color: #00b4cf;
+        color: $light-cyan-color;
+        background-color: $dimgray-color;
+        i,
+        span {
+          color: $light-cyan-color;
         }
       }
     }

@@ -111,6 +111,7 @@ main {
   position: relative;
   border: 1px solid #ccc;
   margin: 0 24px;
+  background-color: $light-grey-color;
 }
 
 .search-box-container i {
@@ -122,7 +123,7 @@ main {
   border: none;
   padding: 0.5rem 0.5rem 0.5rem 0;
   flex: 1;
-
+  background-color: $light-grey-color;
   &:focus {
     outline: none;
   }
@@ -131,7 +132,7 @@ main {
 .box-status {
   position: relative;
   text-align: center;
-  
+
   &::before {
     font-size: 144px;
     position: absolute;
@@ -155,8 +156,8 @@ main {
     content: "\f0f4";
   }
 
-  span{
-      color: white;
+  span {
+    color: white;
   }
 
   .title {
@@ -237,8 +238,10 @@ main {
     border-right: 1px solid grey;
     border-color: rgba(0, 0, 0, 0.137);
     cursor: pointer;
+
     &.active {
-      border-bottom: 3px solid;
+      color: $light-cyan-color;
+      border-bottom: 3px solid $light-cyan-color;
     }
   }
 

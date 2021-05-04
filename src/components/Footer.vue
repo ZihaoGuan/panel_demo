@@ -11,7 +11,7 @@ export default Vue.extend({ name: "Footer" });
 
 <style lang="scss" scoped>
 footer {
-  background-color: #ffffff;
+  background-color: white;
   position: fixed;
   bottom: 0;
   width: 100%;

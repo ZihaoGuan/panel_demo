@@ -54,10 +54,9 @@
         </div>
       </div>
       <div class="row">
-        <div class="btn-square btn-add popup light-cyan-bg">
+        <div class="btn-square btn-add popup btn-blue">
           <i
             class="icomoon icon-plus i-16 btn"
-            style="color: white"
             @click="showAgentListPopUpDialog(agent.id)"
           ></i>
           <div
@@ -76,13 +75,13 @@
             </div>
             <div class="row">
               <div
-                class="btn-square light-cyan-bg white-text btn"
+                class="btn-square btn btn-blue"
                 @click="addResources(agent.id, value)"
               >
                 Add Resources
               </div>
               <div
-                class="btn-square dimgray-bg white-text btn"
+                class="btn-square btn btn-gray"
                 @click="closeAgentListPopUpDialog()"
               >
                 Cancel
@@ -169,13 +168,13 @@ img.osicons {
   .popup-window {
     visibility: hidden;
     width: 570px;
-    color: #fff;
+    color: white;
     padding: 8px 0;
     position: absolute;
     z-index: 1;
     top: 125%;
     left: 0%;
-    border: 2px solid #00b4cf;
+    border: 2px solid $light-cyan-color;
 
     &::after {
       content: "";
@@ -190,8 +189,8 @@ img.osicons {
       -moz-transform: rotate(225deg);
       -o-transform: rotate(225deg);
       -ms-transform: rotate(225deg);
-      border-right: 2px solid #00b4cf;
-      border-bottom: 2px solid #00b4cf;
+      border-right: 2px solid $light-cyan-color;
+      border-bottom: 2px solid $light-cyan-color;
     }
   }
 
@@ -233,6 +232,28 @@ img.osicons {
 .btn-square i {
   height: 30px;
   vertical-align: middle;
+}
+
+.btn-blue {
+  background-color: $light-cyan-color;
+  color: white;
+  i {
+    color: white;
+  }
+  &:hover {
+    background-color: $dark-cyan-color;
+  }
+}
+
+.btn-gray {
+  background-color: $dimgray-color;
+  color: white;
+  i {
+    color: white;
+  }
+  &:hover {
+    background-color: $slategray-color;
+  }
 }
 
 .rightmost {
