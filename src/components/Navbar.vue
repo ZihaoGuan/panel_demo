@@ -1,22 +1,22 @@
 <template>
   <nav class="slategray-bg">
     <div class="tab-container">
-      <div class="tab">
+      <a class="tab">
         <i class="icomoon icon-dashboard"></i>
         <span>DASHBOARD</span>
-      </div>
-      <div class="tab">
+      </a>
+      <a class="tab">
         <i class="icomoon icon-sitemap"></i>
         <span>AGENT</span>
-      </div>
-      <div class="tab">
+      </a>
+      <a class="tab">
         <i class="icomoon icon-boat"></i>
         <span>MY CRUISE</span>
-      </div>
-      <div class="tab">
+      </a>
+      <a class="tab">
         <i class="icomoon icon-life-bouy"></i>
         <span>HELP</span>
-      </div>
+      </a>
     </div>
   </nav>
 </template>

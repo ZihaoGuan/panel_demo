@@ -3,8 +3,18 @@
     <div class="wrapper">
       <div class="container">
         <div class="avatar"></div>
-        <img src="../assets/logo/logo.svg" class="logo" />
-        <img src="../assets/logo/avatar.jpg" class="avatar" />
+        <div class="logo"><img src="../assets/logo/logo.svg" /></div>
+        <div class="avatar">
+          <img src="../assets/logo/avatar.jpg" />
+          <ul class="dropdown">
+            <li>
+              <a><i class="icomoon icon-id-card"></i><span>Profile</span></a>
+            </li>
+            <li>
+              <a><i class="icomoon icon-sign-in"></i><span>Sign Out</span></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </header>
@@ -23,13 +33,60 @@ header {
   z-index: 100;
 }
 .logo {
-  height: 40px;
+  img {
+    height: 40px;
+  }
 }
 .avatar {
-  height: 40px;
-  width: 40px;
-  border-radius: 20px;
+  position: relative;
+  img {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+  }
+  &:hover > ul,
+  &:focus-within > ul {
+    visibility: visible;
+    display: block;
+  }
+  ul {
+    list-style: none;
+    visibility: hidden;
+    position: absolute;
+    transition: all 0.5s ease;
+    right: 0;
+    display: none;
+  }
+
+  li {
+    background: white;
+    display: block;
+    padding: 1rem;
+    position: relative;
+    transition-duration: 0.5s;
+    a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      i{
+        width:10%;
+      }
+      span {
+        margin-left: 20px;
+        white-space: nowrap;
+      }
+    }
+    &:hover,
+    &:focus-within {
+      background: #efefef;
+      cursor: pointer;
+    }
+    &:focus-within a {
+      outline: none;
+    }
+  }
 }
+
 .wrapper {
   max-width: 1200px;
   margin: auto;
@@ -39,7 +96,7 @@ header {
   justify-content: space-between;
   padding: 0 5px;
   margin: 0 20px;
-  height:60px;
+  height: 60px;
   align-items: center;
 }
 </style>

@@ -105,7 +105,7 @@
         </div>
         <div
           v-if="agent.status === 'building'"
-          class="btn-square rightmost light-cyan-bg white-text"
+          class="btn-square rightmost btn-blue btn"
         >
           <i class="icomoon icon-deny" style="color: white"></i>
           Deny
