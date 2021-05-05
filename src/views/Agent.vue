@@ -203,28 +203,6 @@ main {
   }
 }
 
-.box-flex {
-  display: flex;
-
-  .box-column {
-    flex-grow: 1;
-    flex-basis: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    .title {
-      padding: 20px 0;
-      font-size: 12px;
-    }
-
-    .number {
-      padding: 20px 0;
-      font-size: 20px;
-    }
-  }
-}
-
 .control-bar {
   display: flex;
   margin: 20px;
@@ -255,5 +233,42 @@ main {
 
 .item-agents {
   display: block;
+}
+
+.box-flex {
+  display: flex;
+  .box-column {
+    flex-grow: 1;
+    flex-basis: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (min-width: $desktop-HD-size) {
+  .box-flex {
+    .box-column {
+      flex-direction: column;
+      .title {
+        padding: 20px 0;
+        font-size: 12px;
+      }
+      .number {
+        padding: 20px 0;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $desktop-HD-size) {
+  .box-flex {
+    flex-direction: column;
+    .box-column {
+      margin: 10px;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
 }
 </style>

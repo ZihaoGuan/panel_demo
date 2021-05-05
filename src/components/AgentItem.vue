@@ -33,7 +33,6 @@
           <i class="icomoon icon-desktop i-16"></i>
           {{ agent.name }}
         </div>
-        <!-- -------------------- -->
         <div
           :class="[
             agent.status === 'idle'
@@ -46,7 +45,6 @@
         >
           {{ agent.status }}
         </div>
-        <!-- -------------------- -->
         <div class="ip" style="margin-right: 10px">
           <i class="icomoon icon-info i-16"></i>
           {{ agent.ip }}
@@ -160,9 +158,7 @@ export default Vue.extend({
 }
 
 img.osicons {
-  width: 80px;
-  height: 80px;
-  margin: 0 10px;
+ display: none;
 }
 
 .popup {
@@ -270,5 +266,14 @@ img.osicons {
 .status {
   margin: 0 20px;
   padding: 0 5px;
+}
+
+@media only screen and (min-width: $desktop-HD-size) {
+  img.osicons {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0 10px;
+  }
 }
 </style>
