@@ -187,6 +187,7 @@ main {
   margin: 20px;
   align-items: center;
   height: 50px;
+  overflow: hidden;
 
   .type-tab {
     height: 50px;
