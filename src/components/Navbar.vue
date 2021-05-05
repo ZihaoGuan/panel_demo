@@ -73,9 +73,11 @@ nav {
 
 @media only screen and (max-width: $desktop-size) {
   nav {
+    z-index: 101;
     display: none;
     &.show{
       display: block;
+      top:0;
     }
   }
 }

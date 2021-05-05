@@ -20,4 +20,10 @@ footer {
   -webkit-box-shadow: 0 3px 5px 2px gray;
   box-shadow: 0 3px 5px 2px gray;
 }
+
+@media only screen and (max-width: $desktop-size) {
+  footer{
+    display: none;
+  }
+}
 </style>
