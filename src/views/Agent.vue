@@ -1,64 +1,62 @@
 <template>
-  <div>
-    <div class="wrapper">
-      <Navbar />
-      <main>
-        <div class="box-container">
-          <div class="box orange-bg box-status box-building">
-            <span class="title">Building</span>
+  <div class="wrapper">
+    <Navbar />
+    <main>
+      <div class="box-container">
+        <div class="box orange-bg box-status box-building">
+          <span class="title">Building</span>
+          <span class="number">
+            {{ this.getAgentCountByStatus("building") }}
+          </span>
+        </div>
+        <div class="box green-bg box-status box-idle">
+          <span class="title">Idle</span>
+          <span class="number">
+            {{ this.getAgentCountByStatus("idle") }}
+          </span>
+        </div>
+        <div class="box white-bg box-flex text-center">
+          <div class="box-column">
+            <span class="title">All</span>
             <span class="number">
-              {{ this.getAgentCountByStatus("building") }}
+              {{ this.getAgentCount() }}
             </span>
           </div>
-          <div class="box green-bg box-status box-idle">
-            <span class="title">Idle</span>
+          <div class="box-column">
+            <span class="title">PHYSICAL</span>
             <span class="number">
-              {{ this.getAgentCountByStatus("idle") }}
+              {{ this.getAgentCountByType("physical") }}
             </span>
           </div>
-          <div class="box white-bg box-flex text-center">
-            <div class="box-column">
-              <span class="title">All</span>
-              <span class="number">
-                {{ this.getAgentCount() }}
-              </span>
-            </div>
-            <div class="box-column">
-              <span class="title">PHYSICAL</span>
-              <span class="number">
-                {{ this.getAgentCountByType("physical") }}
-              </span>
-            </div>
-            <div class="box-column">
-              <span class="title">VIRTUAL</span>
-              <span class="number">
-                {{ this.getAgentCountByType("virtual") }}
-              </span>
-            </div>
+          <div class="box-column">
+            <span class="title">VIRTUAL</span>
+            <span class="number">
+              {{ this.getAgentCountByType("virtual") }}
+            </span>
           </div>
         </div>
-        <div class="control-bar white-bg">
-          <div class="type-tab active">All</div>
-          <div class="type-tab">Physical</div>
-          <div class="type-tab">Virtual</div>
-          <div class="search-box-container">
-            <i class="icomoon icon-search i-20"></i>
-            <input class="search-box" />
-          </div>
-          <div class="layout-tab" style="margin-left: auto">
-            <i class="icomoon icon-th-card"></i>
-          </div>
-          <div class="layout-tab active" style="margin-right: 10px">
-            <i class="icomoon icon-th-list"></i>
-          </div>
+      </div>
+      <div class="control-bar white-bg">
+        <div class="type-tab active">All</div>
+        <div class="type-tab">Physical</div>
+        <div class="type-tab">Virtual</div>
+        <div class="search-box-container">
+          <i class="icomoon icon-search i-20"></i>
+          <input class="search-box" />
         </div>
-        <div class="item-agents">
-          <div v-for="agent in agents" :key="agent.id">
-            <AgentItem :agent="agent"></AgentItem>
-          </div>
+        <div class="layout-tab" style="margin-left: auto">
+          <i class="icomoon icon-th-card"></i>
         </div>
-      </main>
-    </div>
+        <div class="layout-tab active" style="margin-right: 10px">
+          <i class="icomoon icon-th-list"></i>
+        </div>
+      </div>
+      <div class="item-agents">
+        <div v-for="agent in agents" :key="agent.id">
+          <AgentItem :agent="agent"></AgentItem>
+        </div>
+      </div>
+    </main>
   </div>
 </template>
 

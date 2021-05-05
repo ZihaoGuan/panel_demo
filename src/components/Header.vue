@@ -2,24 +2,17 @@
   <header class="white-bg">
     <div class="wrapper">
       <div class="container">
-        <div class="avatar"></div>
+        <div class="avatar side bread">
+          <i class="icomoon icon-navicon"> </i>
+        </div>
         <div class="logo"><img src="../assets/logo/logo.svg" /></div>
         <div
-          class="avatar"
+          class="avatar side right"
           :class="{ show: showDropdown }"
           @click="showDropdown = !showDropdown"
         >
           <img src="../assets/logo/avatar.jpg" />
-          <i
-            class="icomoon icon-angle-down"
-            style="
-              font-size: 26px;
-              line-height: 40px;
-              vertical-align: text-bottom;
-              margin: 0 10px;
-            "
-          >
-          </i>
+          <i class="icomoon icon-angle-down"> </i>
           <ul class="dropdown">
             <li>
               <a><i class="icomoon icon-id-card"></i><span>Profile</span></a>
@@ -61,6 +54,14 @@ header {
     height: 40px;
   }
 }
+
+.container .side i {
+  font-size: 26px;
+  line-height: 40px;
+  vertical-align: text-bottom;
+  margin: 0 10px;
+}
+
 .avatar {
   position: relative;
   img {
@@ -68,8 +69,7 @@ header {
     width: 40px;
     border-radius: 20px;
   }
-  &.show > ul
-  {
+  &.show > ul {
     visibility: visible;
     display: block;
   }
@@ -125,5 +125,13 @@ header {
   margin: 0 20px;
   height: 60px;
   align-items: center;
+}
+
+@media only screen and (min-width: $desktop-size) {
+  .bread {
+    i {
+      display: none;
+    }
+  }
 }
 </style>
