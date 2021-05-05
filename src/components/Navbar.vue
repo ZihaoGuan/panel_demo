@@ -23,7 +23,12 @@
 
 <script lang="ts">
 import Vue from "vue";
-export default Vue.extend({ name: "Navbar" });
+export default Vue.extend({
+  name: "Navbar",
+  props: {
+    showNavBar: Boolean,
+  },
+});
 </script>
 
 <style lang="scss" scoped>
@@ -53,7 +58,8 @@ nav {
         color: #ccc;
       }
 
-      &.active, &:hover {
+      &.active,
+      &:hover {
         color: $light-cyan-color;
         background-color: $dimgray-color;
         i,
@@ -61,6 +67,15 @@ nav {
           color: $light-cyan-color;
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: $desktop-size) {
+  nav {
+    display: none;
+    &.show{
+      display: block;
     }
   }
 }

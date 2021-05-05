@@ -71,6 +71,11 @@ import Vue from "vue";
 export default Vue.extend({
   components: { AgentItem, Navbar },
   name: "Agent",
+  data() {
+    return {
+      showNavBar: "",
+    };
+  },
   computed: {
     ...mapState("agents", ["agents"]),
     ...mapGetters("agents", [
@@ -86,8 +91,6 @@ export default Vue.extend({
 main {
   margin-top: 50px;
   padding: 5px;
-  margin-right: 0;
-  margin-left: 300px;
 }
 
 .wrapper {
@@ -98,6 +101,7 @@ main {
 .box-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .box {
@@ -178,31 +182,6 @@ main {
   }
 }
 
-@-moz-keyframes spin {
-  100% {
-    -moz-transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@-o-keyframes spin {
-  100% {
-    -o-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
 .control-bar {
   display: flex;
   margin: 20px;
@@ -245,7 +224,45 @@ main {
   }
 }
 
+@media only screen and (max-width: $tablet-size) {
+  .box-flex {
+    flex-basis: 100%;
+    flex-direction: row;
+    .box-column {
+      flex-direction: column;
+      .title {
+        padding: 10px 0;
+        font-size: 12px;
+      }
+      .number {
+        padding: 10px 0;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $tablet-size) and (max-width: $desktop-HD-size) {
+  .box-flex {
+    flex-direction: column;
+    .box-column {
+      margin: 10px;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}
+
+@media only screen and (min-width: $desktop-size) and (max-width: $desktop-HD-size) {
+  main {
+    margin-left: 300px;
+  }
+}
+
 @media only screen and (min-width: $desktop-HD-size) {
+  main {
+    margin-left: 300px;
+  }
   .box-flex {
     .box-column {
       flex-direction: column;
@@ -261,14 +278,29 @@ main {
   }
 }
 
-@media only screen and (max-width: $desktop-HD-size) {
-  .box-flex {
-    flex-direction: column;
-    .box-column {
-      margin: 10px;
-      flex-direction: row;
-      align-items: center;
-    }
+//animation keyframes declaration
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes spin {
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 </style>
