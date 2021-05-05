@@ -1,5 +1,5 @@
 <template>
-  <div class="item white-bg">
+  <div class="item white-bg" :class="agent.status">
     <!-- ------------------------------------------- -->
     <img
       class="osicons"
@@ -266,6 +266,21 @@ img.osicons {
 .status {
   margin: 0 20px;
   padding: 0 5px;
+}
+
+@media only screen and (max-width: $tablet-size){
+  .building.item{
+    border-left: 3px solid $green-color;
+  }
+  .idle.item{
+    border-left: 3px solid $orange-color;
+  }
+  .row-1{
+    flex-direction: column;
+    .status{
+      display: none;
+    }
+  }
 }
 
 @media only screen and (min-width: $desktop-HD-size) {
