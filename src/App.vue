@@ -26,6 +26,8 @@ export default Vue.extend({
 body {
   background-color: $dark-grey-color;
 }
+
+//default setting
 * {
   padding: 0;
   margin: 0;
@@ -87,6 +89,10 @@ body {
   background-color: $dimgray-color;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .column {
   display: flex;
   flex-direction: column;
@@ -95,9 +101,5 @@ body {
 .row {
   display: flex;
   flex-direction: row;
-}
-
-.text-center {
-  text-align: center;
 }
 </style>

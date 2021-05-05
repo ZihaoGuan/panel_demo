@@ -69,8 +69,6 @@ header {
     border-radius: 20px;
   }
   &.show > ul
-  // &:hover > ul,
-  // &:focus-within > ul {
   {
     visibility: visible;
     display: block;

@@ -34,12 +34,15 @@
           {{ agent.name }}
         </div>
         <!-- -------------------- -->
-        <div v-if="agent.status === 'idle'" class="status green-bg white-text">
-          {{ agent.status }}
-        </div>
         <div
-          v-else-if="agent.status === 'building'"
-          class="status orange-bg white-text"
+          :class="[
+            agent.status === 'idle'
+              ? 'green-bg'
+              : agent.status === 'building'
+              ? 'orange-bg'
+              : '',
+          ]"
+          class="status white-text"
         >
           {{ agent.status }}
         </div>
