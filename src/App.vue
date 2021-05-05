@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header @toggleNavBar="toggleNavBar" />
-    <Agent :showNavBar="this.showNavBar"/>
+    <Agent :showNavBar="this.showNavBar" @closeNavBar="closeNavBar"/>
     <Footer />
   </div>
 </template>
@@ -23,6 +23,9 @@ export default Vue.extend({
     toggleNavBar() {
       this.showNavBar = !this.showNavBar
     },
+    closeNavBar(){
+      this.showNavBar = false
+    }
   },
   data() {
     return {

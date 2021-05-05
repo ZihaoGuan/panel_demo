@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <Navbar :showNavBar="this.showNavBar" />
+    <Navbar :showNavBar="this.showNavBar" @closeNavBar="closeNavBar"/>
     <main>
       <div class="box-container">
         <div class="box orange-bg box-status box-building">
@@ -72,11 +72,6 @@ export default Vue.extend({
   props: {
     showNavBar: Boolean,
   },
-  // data() {
-  //   return {
-  //     showNavBar: false,
-  //   };
-  // },
   computed: {
     ...mapState("agents", ["agents"]),
     ...mapGetters("agents", [
@@ -85,12 +80,17 @@ export default Vue.extend({
       "getAgentCount",
     ]),
   },
+  methods:{
+    closeNavBar(){
+      this.$emit('closeNavBar')
+    }
+  }
 });
 </script>
 
 <style lang="scss" scoped>
 main {
-  margin-top: 50px;
+  margin-top: 60px;
   padding: 5px;
 }
 

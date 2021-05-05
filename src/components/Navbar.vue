@@ -1,5 +1,8 @@
 <template>
-  <nav class="slategray-bg" :class="{show: showNavBar}">
+  <nav class="slategray-bg" :class="{ show: showNavBar }">
+    <div class="btn-close" @click="closeNavBar">
+      <i class="icomoon icon-close"></i>
+    </div>
     <div class="tab-container">
       <a class="tab">
         <i class="icomoon icon-dashboard"></i>
@@ -28,6 +31,11 @@ export default Vue.extend({
   props: {
     showNavBar: Boolean,
   },
+  methods: {
+    closeNavBar() {
+      this.$emit('closeNavBar')
+    },
+  },
 });
 </script>
 
@@ -36,6 +44,18 @@ nav {
   position: fixed;
   width: 300px;
   padding: 20px 0;
+  top: 0;
+  padding-top: 60px;
+
+  .btn-close {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    i {
+      color: $light-cyan_color;
+      font-size: 24px;
+    }
+  }
 
   .tab-container {
     position: sticky;
@@ -75,9 +95,8 @@ nav {
   nav {
     z-index: 101;
     display: none;
-    &.show{
+    &.show {
       display: block;
-      top:0;
     }
   }
 }
