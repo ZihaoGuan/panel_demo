@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <Navbar />
+    <Navbar :showNavBar="this.showNavBar" />
     <main>
       <div class="box-container">
         <div class="box orange-bg box-status box-building">
@@ -69,11 +69,14 @@ import Vue from "vue";
 export default Vue.extend({
   components: { AgentItem, Navbar },
   name: "Agent",
-  data() {
-    return {
-      showNavBar: "",
-    };
+  props: {
+    showNavBar: Boolean,
   },
+  // data() {
+  //   return {
+  //     showNavBar: false,
+  //   };
+  // },
   computed: {
     ...mapState("agents", ["agents"]),
     ...mapGetters("agents", [

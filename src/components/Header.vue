@@ -2,7 +2,7 @@
   <header class="white-bg">
     <div class="wrapper">
       <div class="container">
-        <div class="avatar side bread">
+        <div class="avatar side bread" @click="toggleNavBar">
           <i class="icomoon icon-navicon"> </i>
         </div>
         <div class="logo"><img src="../assets/logo/logo.svg" /></div>
@@ -36,6 +36,11 @@ export default Vue.extend({
       showDropdown: false,
     };
   },
+  methods:{
+    toggleNavBar(){
+      this.$emit('toggleNavBar')
+    }
+  }
 });
 </script>
 
@@ -96,7 +101,6 @@ header {
       display: flex;
       align-items: center;
       i {
-        
         width: 10%;
       }
       span {

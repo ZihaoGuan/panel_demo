@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Header />
-    <Agent />
+    <Header @toggleNavBar="toggleNavBar" />
+    <Agent :showNavBar="this.showNavBar"/>
     <Footer />
   </div>
 </template>
@@ -18,6 +18,16 @@ export default Vue.extend({
     Agent,
     Footer,
     Header,
+  },
+  methods: {
+    toggleNavBar() {
+      this.showNavBar = !this.showNavBar
+    },
+  },
+  data() {
+    return {
+      showNavBar: false,
+    };
   },
 });
 </script>

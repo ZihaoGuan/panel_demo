@@ -1,5 +1,5 @@
 <template>
-  <nav class="slategray-bg">
+  <nav class="slategray-bg" :class="{show: showNavBar}">
     <div class="tab-container">
       <a class="tab">
         <i class="icomoon icon-dashboard"></i>
