@@ -5,7 +5,7 @@
         <i class="icomoon icon-dashboard"></i>
         <span>DASHBOARD</span>
       </a>
-      <a class="tab">
+      <a class="tab active">
         <i class="icomoon icon-sitemap"></i>
         <span>AGENT</span>
       </a>
@@ -53,7 +53,7 @@ nav {
         color: #ccc;
       }
 
-      &:hover {
+      &.active, &:hover {
         color: $light-cyan-color;
         background-color: $dimgray-color;
         i,

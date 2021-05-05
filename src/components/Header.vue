@@ -4,7 +4,11 @@
       <div class="container">
         <div class="avatar"></div>
         <div class="logo"><img src="../assets/logo/logo.svg" /></div>
-        <div class="avatar">
+        <div
+          class="avatar"
+          :class="{ show: showDropdown }"
+          @click="showDropdown = !showDropdown"
+        >
           <img src="../assets/logo/avatar.jpg" />
           <i
             class="icomoon icon-angle-down"
@@ -32,7 +36,14 @@
 
 <script lang="ts">
 import Vue from "vue";
-export default Vue.extend({ name: "Header" });
+export default Vue.extend({
+  name: "Header",
+  data() {
+    return {
+      showDropdown: false,
+    };
+  },
+});
 </script>
 
 <style lang="scss" scoped>
@@ -57,8 +68,10 @@ header {
     width: 40px;
     border-radius: 20px;
   }
-  &:hover > ul,
-  &:focus-within > ul {
+  &.show > ul
+  // &:hover > ul,
+  // &:focus-within > ul {
+  {
     visibility: visible;
     display: block;
   }

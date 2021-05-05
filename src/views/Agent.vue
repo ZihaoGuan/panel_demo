@@ -104,7 +104,8 @@ main {
   margin: 20px;
   flex-grow: 1;
   flex-basis: 0;
-  height: 144px;
+  height: 120px;
+  overflow: hidden;
 }
 
 .search-box-container {
@@ -138,6 +139,7 @@ main {
     position: absolute;
     right: 0;
     left: 0;
+    top: -11px;
     opacity: 0.2;
     line-height: 144px;
   }
