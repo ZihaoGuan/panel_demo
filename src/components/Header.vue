@@ -55,7 +55,7 @@ header {
   }
 }
 
-.container .side i {
+.container .side > i {
   font-size: 26px;
   line-height: 40px;
   vertical-align: text-bottom;
@@ -96,6 +96,7 @@ header {
       display: flex;
       align-items: center;
       i {
+        
         width: 10%;
       }
       span {
