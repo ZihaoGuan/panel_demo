@@ -54,7 +54,7 @@
           {{ agent.location }}
         </div>
       </div>
-      <div class="row">
+      <div class="row row-2">
         <div class="btn-square btn-add popup btn-blue">
           <i
             class="icomoon icon-plus i-16 btn"
@@ -226,6 +226,14 @@ img.osicons {
   color: grey;
   margin-right: 7px;
   vertical-align: middle;
+}
+
+.row-2 {
+  flex-wrap: wrap;
+  .btn-square {
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
 }
 
 .column {
