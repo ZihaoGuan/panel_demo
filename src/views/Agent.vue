@@ -1,95 +1,88 @@
 <template>
-  <div class="wrapper">
-    <Navbar :showNavBar="this.showNavBar" @closeNavBar="closeNavBar" />
-    <main>
-      <div class="box-container">
-        <div class="box orange-bg box-status box-building">
-          <span class="title">Building</span>
+  <div>
+    <div class="box-container">
+      <div class="box orange-bg box-status box-building">
+        <span class="title">Building</span>
+        <span class="number">
+          {{ this.getAgentCountByStatus("building") }}
+        </span>
+      </div>
+      <div class="box green-bg box-status box-idle">
+        <span class="title">Idle</span>
+        <span class="number">
+          {{ this.getAgentCountByStatus("idle") }}
+        </span>
+      </div>
+      <div class="box white-bg box-flex text-center">
+        <div class="box-column">
+          <span class="title">All</span>
           <span class="number">
-            {{ this.getAgentCountByStatus("building") }}
+            {{ this.getAgentCount() }}
           </span>
         </div>
-        <div class="box green-bg box-status box-idle">
-          <span class="title">Idle</span>
+        <div class="box-column">
+          <span class="title">PHYSICAL</span>
           <span class="number">
-            {{ this.getAgentCountByStatus("idle") }}
+            {{ this.getAgentCountByType("physical") }}
           </span>
         </div>
-        <div class="box white-bg box-flex text-center">
-          <div class="box-column">
-            <span class="title">All</span>
-            <span class="number">
-              {{ this.getAgentCount() }}
-            </span>
-          </div>
-          <div class="box-column">
-            <span class="title">PHYSICAL</span>
-            <span class="number">
-              {{ this.getAgentCountByType("physical") }}
-            </span>
-          </div>
-          <div class="box-column">
-            <span class="title">VIRTUAL</span>
-            <span class="number">
-              {{ this.getAgentCountByType("virtual") }}
-            </span>
-          </div>
+        <div class="box-column">
+          <span class="title">VIRTUAL</span>
+          <span class="number">
+            {{ this.getAgentCountByType("virtual") }}
+          </span>
         </div>
       </div>
-      <div class="control-bar">
-        <div
-          class="type-tab"
-          :class="{ active: tab === 'all' }"
-          @click="selectTypeTab('all')"
-        >
-          All
-        </div>
-        <div
-          class="type-tab"
-          :class="{ active: tab === 'physical' }"
-          @click="selectTypeTab('physical')"
-        >
-          Physical
-        </div>
-        <div
-          class="type-tab"
-          :class="{ active: tab === 'virtual' }"
-          @click="selectTypeTab('virtual')"
-        >
-          Virtual
-        </div>
-        <div class="search-box-container">
-          <i class="icomoon icon-search i-20"></i>
-          <input class="search-box" />
-        </div>
-        <div class="layout-tab" style="margin-left: auto">
-          <i class="icomoon icon-th-card btn"></i>
-        </div>
-        <div class="layout-tab active" style="margin-right: 10px">
-          <i class="icomoon icon-th-list btn"></i>
-        </div>
+    </div>
+    <div class="control-bar">
+      <div
+        class="type-tab"
+        :class="{ active: tab === 'all' }"
+        @click="selectTypeTab('all')"
+      >
+        All
       </div>
-      <div class="item-agents">
-        <div v-for="agent in getAgentsByType(tab)" :key="agent.id">
-          <AgentItem :agent="agent"></AgentItem>
-        </div>
+      <div
+        class="type-tab"
+        :class="{ active: tab === 'physical' }"
+        @click="selectTypeTab('physical')"
+      >
+        Physical
       </div>
-    </main>
+      <div
+        class="type-tab"
+        :class="{ active: tab === 'virtual' }"
+        @click="selectTypeTab('virtual')"
+      >
+        Virtual
+      </div>
+      <div class="search-box-container">
+        <i class="icomoon icon-search i-20"></i>
+        <input class="search-box" />
+      </div>
+      <div class="layout-tab" style="margin-left: auto">
+        <i class="icomoon icon-th-card btn"></i>
+      </div>
+      <div class="layout-tab active" style="margin-right: 10px">
+        <i class="icomoon icon-th-list btn"></i>
+      </div>
+    </div>
+    <div class="item-agents">
+      <div v-for="agent in getAgentsByType(tab)" :key="agent.id">
+        <AgentItem :agent="agent"></AgentItem>
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { mapGetters } from "vuex";
 import AgentItem from "../components/AgentItem.vue";
-import Navbar from "../components/Navbar.vue";
 
 import Vue from "vue";
 export default Vue.extend({
-  components: { AgentItem, Navbar },
+  components: { AgentItem },
   name: "Agent",
-  props: {
-    showNavBar: Boolean,
-  },
   data() {
     return { tab: "all" };
   },
@@ -103,9 +96,6 @@ export default Vue.extend({
     ]),
   },
   methods: {
-    closeNavBar() {
-      this.$emit("closeNavBar");
-    },
     selectTypeTab(type: string) {
       this.tab = type;
     },
@@ -114,16 +104,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-main {
-  margin-top: 60px;
-  padding: 5px;
-}
-
-.wrapper {
-  max-width: 1200px;
-  margin: auto;
-}
-
 .box-container {
   display: flex;
   justify-content: space-between;
@@ -131,7 +111,7 @@ main {
 }
 
 .box {
-  margin: 20px;
+  margin: 0.6rem 1.2rem;
   flex-grow: 1;
   flex-basis: 0;
   height: 120px;
@@ -211,7 +191,7 @@ main {
 
 .control-bar {
   display: flex;
-  margin: 20px;
+  margin: 0.6rem 1.2rem;
   align-items: center;
   overflow: hidden;
   background: white;
@@ -312,18 +292,12 @@ main {
 }
 
 @media only screen and (min-width: $desktop-size) and (max-width: $desktop-HD-size) {
-  main {
-    margin-left: 300px;
-  }
   .layout-tab {
     display: block !important;
   }
 }
 
 @media only screen and (min-width: $desktop-HD-size) {
-  main {
-    margin-left: 300px;
-  }
   .layout-tab {
     display: block !important;
   }

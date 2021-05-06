@@ -39,7 +39,7 @@ img {
     display: block;
     width: 80px;
     height: 80px;
-    margin: 0 10px;
+    margin: 0 0.8rem;
   }
 }
 </style>

@@ -1,7 +1,12 @@
 <template>
   <div id="app">
-    <Header @toggleNavBar="toggleNavBar" />
-    <Agent :showNavBar="this.showNavBar" @closeNavBar="closeNavBar" />
+    <Header @openNavBar="openNavBar" />
+    <div class="wrapper">
+      <Navbar :showNavBar="this.showNavBar" @closeNavBar="closeNavBar" />
+      <main>
+        <Agent />
+      </main>
+    </div>
     <Footer />
     <div :class="{ cover: agentShowPopUp }"></div>
   </div>
@@ -12,6 +17,7 @@ import { mapState } from "vuex";
 import Agent from "./views/Agent.vue";
 import Footer from "./components/Footer.vue";
 import Header from "./components/Header.vue";
+import Navbar from "./components/Navbar.vue";
 
 import Vue from "vue";
 export default Vue.extend({
@@ -20,13 +26,14 @@ export default Vue.extend({
     Agent,
     Footer,
     Header,
+    Navbar,
   },
   computed: {
     ...mapState("agents", ["agentShowPopUp"]),
   },
   methods: {
-    toggleNavBar() {
-      this.showNavBar = !this.showNavBar;
+    openNavBar() {
+      this.showNavBar = true;
     },
     closeNavBar() {
       this.showNavBar = false;
@@ -43,6 +50,28 @@ export default Vue.extend({
 <style lang="scss">
 body {
   background-color: $dark-grey-color;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+}
+
+main {
+  margin-top: 60px;
+  padding: 0.5rem;
+}
+
+@media only screen and (min-width: $desktop-size) and (max-width: $desktop-HD-size) {
+  main {
+    margin-left: 300px;
+  }
+}
+
+@media only screen and (min-width: $desktop-HD-size) {
+  main {
+    margin-left: 300px;
+  }
 }
 
 @media only screen and (max-width: $desktop-size) {

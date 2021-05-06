@@ -43,14 +43,13 @@ export default Vue.extend({
 nav {
   position: fixed;
   width: 300px;
-  padding: 20px 0;
   top: 0;
   padding-top: 60px;
 
   .btn-close {
     position: absolute;
-    right: 30px;
-    top: 20px;
+    right: 1.5rem;
+    top: 1.2rem;
     i {
       color: $light-cyan_color;
       font-size: 24px;
@@ -64,18 +63,19 @@ nav {
     .tab {
       display: flex;
       height: 45px;
-      padding-left: 20px;
+      padding-left: 1.5em;
       cursor: pointer;
       align-items: center;
+      margin: 1em 0;
       span {
-        margin-left: 20px;
+        margin-left: 1.5em;
       }
       i {
         font-size: 30px;
       }
       i,
       span {
-        color: #ccc;
+        color: white;
       }
 
       &.active,

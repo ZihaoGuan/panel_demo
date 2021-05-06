@@ -2,7 +2,7 @@
   <header class="white-bg">
     <div class="wrapper">
       <div class="container">
-        <div class="avatar side bread" @click="toggleNavBar">
+        <div class="avatar side bread" @click="showNavBar">
           <i class="icomoon icon-navicon"> </i>
         </div>
         <div class="logo"><img src="../assets/logo/logo.svg" /></div>
@@ -36,11 +36,11 @@ export default Vue.extend({
       showDropdown: false,
     };
   },
-  methods:{
-    toggleNavBar(){
-      this.$emit('toggleNavBar')
-    }
-  }
+  methods: {
+    showNavBar() {
+      this.$emit("openNavBar");
+    },
+  },
 });
 </script>
 
@@ -50,9 +50,9 @@ header {
   top: 0;
   width: 100%;
   z-index: 100;
-  -moz-box-shadow: 0 1px 5px 1px gray;
-  -webkit-box-shadow: 0 1px 5px 1px gray;
-  box-shadow: 0 1px 5px 1px gray;
+  -moz-box-shadow: 0 1px 5px 1px $dimgray-color;
+  -webkit-box-shadow: 0 1px 5px 1px $dimgray-color;
+  box-shadow: 0 1px 5px 1px $dimgray-color;
 }
 .logo {
   img {
@@ -85,9 +85,9 @@ header {
     transition: all 0.5s ease;
     right: 0;
     display: none;
-    -moz-box-shadow: 0 3px 5px 2px #ccc;
-    -webkit-box-shadow: 0 3px 5px 2px #ccc;
-    box-shadow: 0 3px 5px 2px #ccc;
+    -moz-box-shadow: 0 2px 6px 1px $dimgray-color;
+    -webkit-box-shadow: 0 2px 6px 1px $dimgray-color;
+    box-shadow: 0 2px 6px 1px $dimgray-color;
   }
 
   li {
@@ -126,8 +126,8 @@ header {
 .container {
   display: flex;
   justify-content: space-between;
-  padding: 0 5px;
-  margin: 0 20px;
+  padding: 0 0.5rem;
+  margin: 0 1.2rem;
   height: 60px;
   align-items: center;
 }

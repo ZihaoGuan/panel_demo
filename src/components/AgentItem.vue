@@ -7,16 +7,7 @@
           <i class="icomoon icon-desktop i-16"></i>
           {{ agent.name }}
         </div>
-        <div
-          :class="[
-            agent.status === 'idle'
-              ? 'green-bg'
-              : agent.status === 'building'
-              ? 'orange-bg'
-              : '',
-          ]"
-          class="status white-text"
-        >
+        <div :class="agent.status" class="status white-text">
           {{ agent.status }}
         </div>
         <div class="ip" style="margin-right: 10px">
@@ -129,8 +120,8 @@ export default Vue.extend({
 .item {
   display: flex;
   flex-direction: row;
-  margin: 20px;
-  padding: 5px;
+  margin: 1.2rem;
+  padding: 0.8rem;
 }
 
 .popup {
@@ -140,15 +131,15 @@ export default Vue.extend({
     visibility: hidden;
     width: 570px;
     color: white;
-    padding: 24px 0 8px 0;
+    padding: 2em 0 1em 0;
     position: absolute;
     z-index: 1;
     top: 125%;
     left: 0%;
     border: 2px solid $light-cyan-color;
-    -moz-box-shadow: 0 3px 5px 2px #ccc;
-    -webkit-box-shadow: 0 3px 5px 2px #ccc;
-    box-shadow: 0 3px 5px 2px #ccc;
+    -moz-box-shadow: 0 3px 5px 2px $dark-grey-color;
+    -webkit-box-shadow: 0 3px 5px 2px $dark-grey-color;
+    box-shadow: 0 3px 5px 2px $dark-grey-color;
 
     &::after {
       content: "";
@@ -169,7 +160,7 @@ export default Vue.extend({
 
     input {
       width: 100%;
-      padding: 10px;
+      padding: 0.8em;
     }
   }
 
@@ -181,8 +172,8 @@ export default Vue.extend({
 
   .btn-close {
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 0.8em;
+    top: 0.8em;
     i {
       color: $light-cyan_color;
       font-size: 24px;
@@ -191,20 +182,20 @@ export default Vue.extend({
 }
 
 .row {
-  padding: 5px 10px;
+  padding: 0.5em 1em;
 }
 
 .row-1 i {
   color: grey;
-  margin-right: 7px;
+  margin-right: 0.5em;
   vertical-align: middle;
 }
 
 .row-2 {
   flex-wrap: wrap;
   .btn-square {
-    margin-top: 3px;
-    margin-bottom: 3px;
+    margin-top: 0.5em;
+    margin-bottom: 0.1em;
   }
 }
 
@@ -218,8 +209,8 @@ export default Vue.extend({
   font-size: 14px;
   line-height: 30px;
   text-align: center;
-  padding: 0 10px;
-  margin-right: 10px;
+  padding: 0 0.7em;
+  margin-right: 0.7em;
 }
 
 .btn {
@@ -258,32 +249,31 @@ export default Vue.extend({
   margin-right: 0 !important;
 }
 
+.building .status {
+  background: $orange-color;
+}
+
+.idle .status {
+  background: $green-color;
+}
+
 .status {
-  margin: 0 20px;
-  padding: 0 5px;
+  margin: 0 1.3em;
+  padding: 0 0.3em;
 }
 
 @media only screen and (max-width: $tablet-size) {
   .building.item {
-    border-left: 3px solid $green-color;
+    border-left: 3px solid $orange-color;
   }
   .idle.item {
-    border-left: 3px solid $orange-color;
+    border-left: 3px solid $green-color;
   }
   .row-1 {
     flex-direction: column;
     .status {
       display: none;
     }
-  }
-}
-
-@media only screen and (min-width: $desktop-HD-size) {
-  img.osicons {
-    display: block;
-    width: 80px;
-    height: 80px;
-    margin: 0 10px;
   }
 }
 
