@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <Navbar :showNavBar="this.showNavBar" @closeNavBar="closeNavBar"/>
+    <Navbar :showNavBar="this.showNavBar" @closeNavBar="closeNavBar" />
     <main>
       <div class="box-container">
         <div class="box orange-bg box-status box-building">
@@ -36,7 +36,7 @@
           </div>
         </div>
       </div>
-      <div class="control-bar white-bg">
+      <div class="control-bar">
         <div class="type-tab active">All</div>
         <div class="type-tab">Physical</div>
         <div class="type-tab">Virtual</div>
@@ -80,11 +80,11 @@ export default Vue.extend({
       "getAgentCount",
     ]),
   },
-  methods:{
-    closeNavBar(){
-      this.$emit('closeNavBar')
-    }
-  }
+  methods: {
+    closeNavBar() {
+      this.$emit("closeNavBar");
+    },
+  },
 });
 </script>
 
@@ -187,9 +187,8 @@ main {
   display: flex;
   margin: 20px;
   align-items: center;
-  height: 50px;
   overflow: hidden;
-
+  background: white;
   .type-tab {
     height: 50px;
     font-size: 14px;
@@ -207,6 +206,7 @@ main {
   }
 
   .layout-tab {
+    display: none;
     font-size: 20px;
     padding: 0 10px;
   }
@@ -242,6 +242,28 @@ main {
       }
     }
   }
+  .control-bar {
+    background: none;
+    flex-wrap: wrap;
+    .search-box-container {
+      order: -1;
+      flex-basis: 100%;
+      padding:10px;
+      background-color: white;
+      margin: 10px auto;
+      display: flex;
+      input{
+        background: #f3f3f3
+      }
+      i {
+        background:#f3f3f3
+      }
+    }
+    .type-tab {
+      flex-grow: 1;
+      background: white;
+    }
+  }
 }
 
 @media only screen and (min-width: $tablet-size) and (max-width: $desktop-HD-size) {
@@ -259,11 +281,17 @@ main {
   main {
     margin-left: 300px;
   }
+  .layout-tab {
+    display: block !important;
+  }
 }
 
 @media only screen and (min-width: $desktop-HD-size) {
   main {
     margin-left: 300px;
+  }
+  .layout-tab {
+    display: block !important;
   }
   .box-flex {
     .box-column {
