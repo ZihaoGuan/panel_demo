@@ -119,10 +119,6 @@ header {
   }
 }
 
-.wrapper {
-  max-width: 1200px;
-  margin: auto;
-}
 .container {
   display: flex;
   justify-content: space-between;

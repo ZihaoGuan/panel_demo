@@ -8,12 +8,12 @@
       </main>
     </div>
     <Footer />
-    <div :class="{ cover: agentShowPopUp }"></div>
+    <div :class="{ cover: coverOn }"></div>
   </div>
 </template>
 
 <script lang="ts">
-import { mapState } from "vuex";
+import { mapGetters } from "vuex";
 import Agent from "./views/Agent.vue";
 import Footer from "./components/Footer.vue";
 import Header from "./components/Header.vue";
@@ -34,7 +34,7 @@ export default Vue.extend({
     };
   },
   computed: {
-    ...mapState("agents", ["agentShowPopUp"]),
+    ...mapGetters(['coverOn']),
   },
   methods: {
     openNavBar() {
