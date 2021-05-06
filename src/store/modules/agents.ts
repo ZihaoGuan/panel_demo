@@ -77,7 +77,7 @@ const mutations = {
         if (jsonToUpdate) {
             const copy = JSON.parse(JSON.stringify(jsonToUpdate))
             resourcesToAdd.forEach(element => {
-                if (!copy['resources'].includes(element)) {
+                if (element && !copy['resources'].includes(element)) {
                     copy['resources'].push(element)
                 }
             });
