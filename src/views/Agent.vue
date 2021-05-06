@@ -45,10 +45,10 @@
           <input class="search-box" />
         </div>
         <div class="layout-tab" style="margin-left: auto">
-          <i class="icomoon icon-th-card"></i>
+          <i class="icomoon icon-th-card btn"></i>
         </div>
         <div class="layout-tab active" style="margin-right: 10px">
-          <i class="icomoon icon-th-list"></i>
+          <i class="icomoon icon-th-list btn"></i>
         </div>
       </div>
       <div class="item-agents">
@@ -213,6 +213,10 @@ main {
       color: $light-cyan-color;
     }
   }
+}
+
+.btn{
+  cursor: pointer;
 }
 
 .item-agents {

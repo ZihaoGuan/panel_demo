@@ -65,24 +65,24 @@
             :class="{ show: agent.id == agentShowPopUp }"
             :id="'popup' + agent.id"
           >
-            <p class="row">Seperate multiple resource name with commas</p>
+            <div class="btn-close btn" @click="closeAgentListPopUpDialog()">
+              <i class="icomoon icon-close"></i>
+            </div>
             <div class="row">
-              <input
-                style="width: 100%"
-                type="text"
-                v-model="value"
-                placeholder="Input Value"
-              />
+              <p>Seperate multiple resource name with commas</p>
+            </div>
+            <div class="row">
+              <input type="text" v-model="value" placeholder="Input Value" />
             </div>
             <div class="row">
               <div
-                class="btn-square btn btn-blue"
+                class="btn-square btn btn-blue btn-add-resources"
                 @click="addResources(agent.id, value)"
               >
                 Add Resources
               </div>
               <div
-                class="btn-square btn btn-gray"
+                class="btn-square btn btn-gray btn-cancel"
                 @click="closeAgentListPopUpDialog()"
               >
                 Cancel
@@ -168,7 +168,7 @@ img.osicons {
     visibility: hidden;
     width: 570px;
     color: white;
-    padding: 8px 0;
+    padding: 24px 0 8px 0;
     position: absolute;
     z-index: 1;
     top: 125%;
@@ -194,12 +194,27 @@ img.osicons {
       border-right: 2px solid $light-cyan-color;
       border-bottom: 2px solid $light-cyan-color;
     }
+
+    input {
+      width: 100%;
+      padding: 10px;
+    }
   }
 
   .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
+  }
+
+  .btn-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    i {
+      color: $light-cyan_color;
+      font-size: 24px;
+    }
   }
 }
 
@@ -308,7 +323,7 @@ img.osicons {
 @media only screen and (max-width: $tablet-size) {
   .popup .popup-window {
     position: fixed;
-    width:100%;
+    width: 100%;
     z-index: 1000;
     bottom: 0;
     left: 0;
@@ -316,6 +331,20 @@ img.osicons {
     &::after {
       display: none;
     }
+
+    p {
+      text-align: start;
+      line-height: initial;
+    }
+  }
+
+  .btn-add-resources {
+    width: 100%;
+    margin: 0;
+  }
+
+  .btn-cancel {
+    display: none;
   }
 }
 </style>
