@@ -1,32 +1,6 @@
 <template>
   <div class="item white-bg" :class="agent.status">
-    <!-- ------------------------------------------- -->
-    <img
-      class="osicons"
-      v-if="agent.os === 'windows'"
-      src="../assets/os-icons/windows.png"
-    />
-    <img
-      class="osicons"
-      v-else-if="agent.os === 'ubuntu'"
-      src="../assets/os-icons/ubuntu.png"
-    />
-    <img
-      class="osicons"
-      v-else-if="agent.os === 'suse'"
-      src="../assets/os-icons/suse.png"
-    />
-    <img
-      class="osicons"
-      v-else-if="agent.os === 'debian'"
-      src="../assets/os-icons/debin.png"
-    />
-    <img
-      class="osicons"
-      v-else-if="agent.os === 'centos'"
-      src="../assets/os-icons/cent_os.png"
-    />
-    <!-- ------------------------------------------- -->
+    <OsIcon :os="agent.os" />
     <div class="column">
       <div class="row row-1">
         <div class="name light-cyan-text">
@@ -118,11 +92,13 @@
 <script lang="ts">
 import { mapActions, mapState } from "vuex";
 import Vue from "vue";
+import OsIcon from "./OsIcon.vue";
 export default Vue.extend({
   name: "AgentItem",
   props: {
     agent: Object,
   },
+  components: { OsIcon },
   computed: {
     ...mapState("agents", ["agentShowPopUp"]),
   },
@@ -155,10 +131,6 @@ export default Vue.extend({
   flex-direction: row;
   margin: 20px;
   padding: 5px;
-}
-
-img.osicons {
-  display: none;
 }
 
 .popup {
