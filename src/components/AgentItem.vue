@@ -292,13 +292,27 @@ img.osicons {
   }
 }
 
-@media only screen and (min-width: $tablet-size) and (max-width: $desktop-HD-size) {
+@media only screen and (min-width: $tablet-size) and (max-width: $desktop-size) {
   .popup .popup-window {
     position: fixed;
     z-index: 1000;
     top: 40vh;
     left: 50%;
     transform: translateX(-50%);
+    &::after {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: $tablet-size) {
+  .popup .popup-window {
+    position: fixed;
+    width:100%;
+    z-index: 1000;
+    bottom: 0;
+    left: 0;
+    top: unset;
     &::after {
       display: none;
     }
