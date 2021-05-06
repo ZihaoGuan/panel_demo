@@ -152,6 +152,7 @@ main {
 
 .search-box {
   border: none;
+  border-radius: 0;
   padding: 0.5rem 0.5rem 0.5rem 0;
   flex: 1;
   background-color: $light-grey-color;
