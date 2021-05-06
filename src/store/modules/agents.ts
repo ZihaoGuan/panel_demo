@@ -55,6 +55,10 @@ const getters = {
             }
         }, 0)
         return count
+    },
+    getAgentsByType: (state: State) => (type: string) => {
+        if (type === "all") return state.agents 
+        return state.agents.filter((agent: Agent) => agent.type === type)
     }
 }
 

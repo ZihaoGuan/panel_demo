@@ -37,9 +37,27 @@
         </div>
       </div>
       <div class="control-bar">
-        <div class="type-tab active">All</div>
-        <div class="type-tab">Physical</div>
-        <div class="type-tab">Virtual</div>
+        <div
+          class="type-tab"
+          :class="{ active: tab === 'all' }"
+          @click="selectTypeTab('all')"
+        >
+          All
+        </div>
+        <div
+          class="type-tab"
+          :class="{ active: tab === 'physical' }"
+          @click="selectTypeTab('physical')"
+        >
+          Physical
+        </div>
+        <div
+          class="type-tab"
+          :class="{ active: tab === 'virtual' }"
+          @click="selectTypeTab('virtual')"
+        >
+          Virtual
+        </div>
         <div class="search-box-container">
           <i class="icomoon icon-search i-20"></i>
           <input class="search-box" />
@@ -52,7 +70,7 @@
         </div>
       </div>
       <div class="item-agents">
-        <div v-for="agent in agents" :key="agent.id">
+        <div v-for="agent in getAgentsByType(tab)" :key="agent.id">
           <AgentItem :agent="agent"></AgentItem>
         </div>
       </div>
@@ -61,7 +79,7 @@
 </template>
 
 <script lang="ts">
-import { mapState, mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 import AgentItem from "../components/AgentItem.vue";
 import Navbar from "../components/Navbar.vue";
 
@@ -72,17 +90,24 @@ export default Vue.extend({
   props: {
     showNavBar: Boolean,
   },
+  data() {
+    return { tab: "all" };
+  },
   computed: {
-    ...mapState("agents", ["agents"]),
+    //...mapState("agents", ["agents"]),
     ...mapGetters("agents", [
       "getAgentCountByStatus",
       "getAgentCountByType",
       "getAgentCount",
+      "getAgentsByType",
     ]),
   },
   methods: {
     closeNavBar() {
       this.$emit("closeNavBar");
+    },
+    selectTypeTab(type: string) {
+      this.tab = type;
     },
   },
 });
@@ -215,7 +240,7 @@ main {
   }
 }
 
-.btn{
+.btn {
   cursor: pointer;
 }
 
