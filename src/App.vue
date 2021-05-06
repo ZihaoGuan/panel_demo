@@ -3,7 +3,7 @@
     <Header @toggleNavBar="toggleNavBar" />
     <Agent :showNavBar="this.showNavBar" @closeNavBar="closeNavBar" />
     <Footer />
-    <div :class="{ cover:  agentShowPopUp}"></div>
+    <div :class="{ cover: agentShowPopUp }"></div>
   </div>
 </template>
 
@@ -50,7 +50,7 @@ body {
   .cover {
     background: black;
     opacity: 0.3;
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
     z-index: 999;
