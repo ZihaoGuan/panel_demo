@@ -15,7 +15,5 @@ new Vue({
   render: h => h(App),
   created() {
     this.$store.dispatch('agents/loadAllAgents')
-    //setTimeout(() => { this.$store.dispatch('addResourcesByAgentId', { id: 2, resources: 'abc,sc' }) }, 2000)
-    //setTimeout(()=>{this.$store.dispatch('deleteResourcesByAgentId', {id: 2, resource: 'abc'}) }, 5000)
   }
 }).$mount('#app')

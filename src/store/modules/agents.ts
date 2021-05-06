@@ -57,7 +57,7 @@ const getters = {
         return count
     },
     getAgentsByType: (state: State) => (type: string) => {
-        if (type === "all") return state.agents 
+        if (type === "all") return state.agents
         return state.agents.filter((agent: Agent) => agent.type === type)
     }
 }
@@ -65,7 +65,6 @@ const getters = {
 const mutations = {
     loadAllAgents: (state: State) => {
         Vue.axios.get("http://www.nekosaysmeow.cyou:4000/api/agents").then((response) => {
-            console.log(response.data)
             state.agents = response.data
             //Vue.set(state, 'agents', response.data)
         })

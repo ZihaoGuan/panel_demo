@@ -28,6 +28,11 @@ export default Vue.extend({
     Header,
     Navbar,
   },
+  data() {
+    return {
+      showNavBar: false,
+    };
+  },
   computed: {
     ...mapState("agents", ["agentShowPopUp"]),
   },
@@ -38,11 +43,6 @@ export default Vue.extend({
     closeNavBar() {
       this.showNavBar = false;
     },
-  },
-  data() {
-    return {
-      showNavBar: false,
-    };
   },
 });
 </script>
@@ -62,13 +62,7 @@ main {
   padding: 0.5rem;
 }
 
-@media only screen and (min-width: $desktop-size) and (max-width: $desktop-HD-size) {
-  main {
-    margin-left: 300px;
-  }
-}
-
-@media only screen and (min-width: $desktop-HD-size) {
+@media only screen and (min-width: $desktop-size) {
   main {
     margin-left: 300px;
   }

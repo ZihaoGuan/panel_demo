@@ -35,27 +35,21 @@
       </div>
     </div>
     <div class="control-bar">
-      <div
-        class="type-tab"
-        :class="{ active: tab === 'all' }"
-        @click="selectTypeTab('all')"
-      >
-        All
-      </div>
-      <div
-        class="type-tab"
-        :class="{ active: tab === 'physical' }"
-        @click="selectTypeTab('physical')"
-      >
-        Physical
-      </div>
-      <div
-        class="type-tab"
-        :class="{ active: tab === 'virtual' }"
-        @click="selectTypeTab('virtual')"
-      >
-        Virtual
-      </div>
+      <TypeTab
+        :type="'All'"
+        :active="tab === 'all'"
+        @click.native="selectTypeTab('all')"
+      />
+      <TypeTab
+        :type="'Physical'"
+        :active="tab === 'physical'"
+        @click.native="selectTypeTab('physical')"
+      />
+      <TypeTab
+        :type="'Virtual'"
+        :active="tab === 'virtual'"
+        @click.native="selectTypeTab('virtual')"
+      />
       <div class="search-box-container">
         <i class="icomoon icon-search i-20"></i>
         <input class="search-box" />
@@ -78,16 +72,16 @@
 <script lang="ts">
 import { mapGetters } from "vuex";
 import AgentItem from "../components/AgentItem.vue";
+import TypeTab from "../components/TypeTab.vue";
 
 import Vue from "vue";
 export default Vue.extend({
-  components: { AgentItem },
+  components: { AgentItem, TypeTab },
   name: "Agent",
   data() {
     return { tab: "all" };
   },
   computed: {
-    //...mapState("agents", ["agents"]),
     ...mapGetters("agents", [
       "getAgentCountByStatus",
       "getAgentCountByType",
@@ -195,21 +189,6 @@ export default Vue.extend({
   align-items: center;
   overflow: hidden;
   background: white;
-  .type-tab {
-    height: 50px;
-    font-size: 14px;
-    line-height: 50px;
-    width: 80px;
-    text-align: center;
-    border-right: 1px solid grey;
-    border-color: rgba(0, 0, 0, 0.137);
-    cursor: pointer;
-
-    &.active {
-      color: $light-cyan-color;
-      border-bottom: 3px solid $light-cyan-color;
-    }
-  }
 
   .layout-tab {
     display: none;
@@ -272,10 +251,6 @@ export default Vue.extend({
       i {
         background: $light-grey-color;
       }
-    }
-    .type-tab {
-      flex-grow: 1;
-      background: white;
     }
   }
 }

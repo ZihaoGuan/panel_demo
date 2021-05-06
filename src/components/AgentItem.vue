@@ -10,7 +10,7 @@
         <div :class="agent.status" class="status white-text">
           {{ agent.status }}
         </div>
-        <div class="ip" style="margin-right: 10px">
+        <div class="ip">
           <i class="icomoon icon-info i-16"></i>
           {{ agent.ip }}
         </div>
@@ -25,41 +25,15 @@
             class="icomoon icon-plus i-16 btn"
             @click="showAgentListPopUpDialog(agent.id)"
           ></i>
-          <div
-            class="popup-window white-bg"
-            :class="{ show: agent.id == agentShowPopUp }"
-            :id="'popup' + agent.id"
-          >
-            <div class="btn-close btn" @click="closeAgentListPopUpDialog()">
-              <i class="icomoon icon-close"></i>
-            </div>
-            <div class="row">
-              <p>Seperate multiple resource name with commas</p>
-            </div>
-            <div class="row">
-              <input type="text" v-model="value" placeholder="Input Value" />
-            </div>
-            <div class="row">
-              <div
-                class="btn-square btn btn-blue btn-add-resources"
-                @click="addResources(agent.id, value)"
-              >
-                Add Resources
-              </div>
-              <div
-                class="btn-square btn btn-gray btn-cancel"
-                @click="closeAgentListPopUpDialog()"
-              >
-                Cancel
-              </div>
-            </div>
-          </div>
+          <PopupDialog
+            :show="agent.id == agentShowPopUp"
+            :id="agent.id"
+          />
         </div>
         <div
           v-for="resource in agent.resources"
           :key="resource"
-          class="btn-square"
-          style="background-color: #efefef"
+          class="btn-square btn-delete"
         >
           {{ resource }}
           <i
@@ -73,7 +47,7 @@
           v-if="agent.status === 'building'"
           class="btn-square rightmost btn-blue btn"
         >
-          <i class="icomoon icon-deny" style="color: white"></i>
+          <i class="icomoon icon-deny white-text"></i>
           Deny
         </div>
       </div>
@@ -84,35 +58,22 @@
 import { mapActions, mapState } from "vuex";
 import Vue from "vue";
 import OsIcon from "./OsIcon.vue";
+import PopupDialog from "./PopupDialog.vue";
+
 export default Vue.extend({
   name: "AgentItem",
   props: {
     agent: Object,
   },
-  components: { OsIcon },
+  components: { OsIcon, PopupDialog },
   computed: {
     ...mapState("agents", ["agentShowPopUp"]),
-  },
-  data() {
-    return {
-      value: "",
-    };
   },
   methods: {
     ...mapActions("agents", [
       "deleteResourcesByAgentId",
-      "addResourcesByAgentId",
       "showAgentListPopUpDialog",
-      "closeAgentListPopUpDialog",
     ]),
-    addResources(id: number, resources: string) {
-      this.addResourcesByAgentId({
-        id,
-        resources,
-      });
-      this.value = "";
-      this.closeAgentListPopUpDialog();
-    },
   },
 });
 </script>
@@ -126,59 +87,6 @@ export default Vue.extend({
 
 .popup {
   position: relative;
-
-  .popup-window {
-    visibility: hidden;
-    width: 570px;
-    color: white;
-    padding: 2em 0 1em 0;
-    position: absolute;
-    z-index: 1;
-    top: 125%;
-    left: 0%;
-    border: 2px solid $light-cyan-color;
-    -moz-box-shadow: 0 3px 5px 2px $dark-grey-color;
-    -webkit-box-shadow: 0 3px 5px 2px $dark-grey-color;
-    box-shadow: 0 3px 5px 2px $dark-grey-color;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: -7.5px;
-      left: 7.5px;
-      width: 10px;
-      height: 10px;
-      background-color: white;
-      transform: rotate(225deg);
-      -webkit-transform: rotate(225deg);
-      -moz-transform: rotate(225deg);
-      -o-transform: rotate(225deg);
-      -ms-transform: rotate(225deg);
-      border-right: 2px solid $light-cyan-color;
-      border-bottom: 2px solid $light-cyan-color;
-    }
-
-    input {
-      width: 100%;
-      padding: 0.8em;
-    }
-  }
-
-  .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
-  }
-
-  .btn-close {
-    position: absolute;
-    right: 0.8em;
-    top: 0.8em;
-    i {
-      color: $light-cyan_color;
-      font-size: 24px;
-    }
-  }
 }
 
 .row {
@@ -215,6 +123,10 @@ export default Vue.extend({
 
 .btn {
   cursor: pointer;
+}
+
+.btn-delete{
+  background: #efefef;
 }
 
 .btn-square i {
@@ -262,6 +174,10 @@ export default Vue.extend({
   padding: 0 0.3em;
 }
 
+.ip{
+margin-right: 1em
+}
+
 @media only screen and (max-width: $tablet-size) {
   .building.item {
     border-left: 3px solid $orange-color;
@@ -274,47 +190,6 @@ export default Vue.extend({
     .status {
       display: none;
     }
-  }
-}
-
-@media only screen and (min-width: $tablet-size) and (max-width: $desktop-size) {
-  .popup .popup-window {
-    position: fixed;
-    z-index: 1000;
-    top: 40vh;
-    left: 50%;
-    transform: translateX(-50%);
-    &::after {
-      display: none;
-    }
-  }
-}
-
-@media only screen and (max-width: $tablet-size) {
-  .popup .popup-window {
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    bottom: 0;
-    left: 0;
-    top: unset;
-    &::after {
-      display: none;
-    }
-
-    p {
-      text-align: start;
-      line-height: initial;
-    }
-  }
-
-  .btn-add-resources {
-    width: 100%;
-    margin: 0;
-  }
-
-  .btn-cancel {
-    display: none;
   }
 }
 </style>
