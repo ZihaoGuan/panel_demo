@@ -13,38 +13,62 @@
 </template>
 
 <script lang="ts">
-import { mapGetters } from "vuex";
+//import { mapGetters } from "vuex";
 import Agent from "./views/Agent.vue";
 import Footer from "./components/Footer.vue";
 import Header from "./components/Header.vue";
 import Navbar from "./components/Navbar.vue";
 
-import Vue from "vue";
-export default Vue.extend({
-  name: "App",
+//import Vue from "vue";
+import { Component, Vue } from "vue-property-decorator";
+import { Getter } from "vuex-class";
+
+@Component({
   components: {
     Agent,
     Footer,
     Header,
     Navbar,
   },
-  data() {
-    return {
-      showNavBar: false,
-    };
-  },
-  computed: {
-    ...mapGetters(['coverOn']),
-  },
-  methods: {
-    openNavBar() {
-      this.showNavBar = true;
-    },
-    closeNavBar() {
-      this.showNavBar = false;
-    },
-  },
-});
+})
+export default class App extends Vue {
+  @Getter("coverOn") public coverOn!: Boolean;
+
+  showNavBar = false;
+
+  public openNavBar() {
+    this.showNavBar = true;
+  }
+  public closeNavBar() {
+    this.showNavBar = false;
+  }
+}
+
+// export default Vue.extend({
+//   name: "App",
+//   components: {
+//     Agent,
+//     Footer,
+//     Header,
+//     Navbar,
+//   },
+//   data() {
+//     return {
+//       showNavBar: false,
+//     };
+//   },
+//   computed: {
+//     ...mapGetters(["coverOn"]),
+//   },
+//   methods: {
+//     openNavBar() {
+//       this.showNavBar = true;
+//     },
+//     closeNavBar() {
+//       this.showNavBar = false;
+//     },
+//   },
+// });
 </script>
 
 <style lang="scss">
