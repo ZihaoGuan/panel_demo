@@ -115,7 +115,7 @@ export default Vue.extend({
 .search-box-container {
   position: relative;
   border: 1px solid #ccc;
-  margin: 0 24px;
+  margin: 0 2rem;
   background-color: $light-grey-color;
 }
 
@@ -171,15 +171,15 @@ export default Vue.extend({
     font-size: 18px;
     font-weight: bold;
     position: absolute;
-    top: 5%;
-    left: 5%;
+    top: 0.5em;
+    left: 0.5em;
   }
 
   .number {
     font-size: 48px;
     position: absolute;
-    bottom: 10%;
-    right: 5%;
+    bottom: 0.2em;
+    right: 0.4em;
   }
 }
 
@@ -193,7 +193,7 @@ export default Vue.extend({
   .layout-tab {
     display: none;
     font-size: 20px;
-    padding: 0 10px;
+    padding: 0 0.5em;
     &.active i {
       color: $light-cyan-color;
     }
@@ -226,11 +226,11 @@ export default Vue.extend({
       flex-direction: column;
       justify-content: space-evenly;
       .title {
-        padding: 10px 0;
+        padding: 1em 0;
         font-size: 12px;
       }
       .number {
-        padding: 10px 0;
+        padding: 1em 0;
         font-size: 20px;
       }
     }
@@ -242,9 +242,9 @@ export default Vue.extend({
     .search-box-container {
       order: -1;
       flex-basis: 100%;
-      padding: 10px;
+      padding: 0.8em;
       background-color: white;
-      margin: 10px auto;
+      margin: 0.8em auto;
       display: flex;
       border: none;
       input,
@@ -259,7 +259,7 @@ export default Vue.extend({
   .box-flex {
     flex-direction: column;
     .box-column {
-      margin: 10px;
+      margin: 0.8em;
       flex-direction: row;
       align-items: center;
     }
@@ -280,11 +280,11 @@ export default Vue.extend({
     .box-column {
       flex-direction: column;
       .title {
-        padding: 20px 0;
+        padding: 1.5em 0;
         font-size: 12px;
       }
       .number {
-        padding: 20px 0;
+        padding: 1em 0;
         font-size: 20px;
       }
     }

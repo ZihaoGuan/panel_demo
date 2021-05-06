@@ -58,13 +58,13 @@ body {
 }
 
 main {
-  margin-top: 60px;
+  margin-top: $header-height;
   padding: 0.5rem;
 }
 
 @media only screen and (min-width: $desktop-size) {
   main {
-    margin-left: 300px;
+    margin-left: $navbar-width;
   }
 }
 

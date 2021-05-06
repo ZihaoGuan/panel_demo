@@ -33,7 +33,7 @@ export default Vue.extend({
   },
   methods: {
     closeNavBar() {
-      this.$emit('closeNavBar')
+      this.$emit("closeNavBar");
     },
   },
 });
@@ -42,9 +42,9 @@ export default Vue.extend({
 <style lang="scss" scoped>
 nav {
   position: fixed;
-  width: 300px;
+  width: $navbar-width;
   top: 0;
-  padding-top: 60px;
+  padding-top: $header-height;
 
   .btn-close {
     position: absolute;
