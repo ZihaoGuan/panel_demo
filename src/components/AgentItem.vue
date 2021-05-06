@@ -158,7 +158,7 @@ export default Vue.extend({
 }
 
 img.osicons {
- display: none;
+  display: none;
 }
 
 .popup {
@@ -268,16 +268,16 @@ img.osicons {
   padding: 0 5px;
 }
 
-@media only screen and (max-width: $tablet-size){
-  .building.item{
+@media only screen and (max-width: $tablet-size) {
+  .building.item {
     border-left: 3px solid $green-color;
   }
-  .idle.item{
+  .idle.item {
     border-left: 3px solid $orange-color;
   }
-  .row-1{
+  .row-1 {
     flex-direction: column;
-    .status{
+    .status {
       display: none;
     }
   }
@@ -289,6 +289,21 @@ img.osicons {
     width: 80px;
     height: 80px;
     margin: 0 10px;
+  }
+}
+
+@media only screen and (min-width: $tablet-size) and (max-width: $desktop-HD-size) {
+  .popup {
+    position: unset;
+    .popup-window {
+      z-index: 1000;
+      top: 40vh;
+      left: 50%;
+      transform: translateX(-50%);
+      &::after {
+        display: none;
+      }
+    }
   }
 }
 </style>

@@ -209,6 +209,9 @@ main {
     display: none;
     font-size: 20px;
     padding: 0 10px;
+    &.active i {
+      color: $light-cyan-color;
+    }
   }
 }
 
@@ -232,6 +235,7 @@ main {
     flex-direction: row;
     .box-column {
       flex-direction: column;
+      justify-content: space-evenly;
       .title {
         padding: 10px 0;
         font-size: 12px;
@@ -243,20 +247,20 @@ main {
     }
   }
   .control-bar {
+    margin-top: 0;
     background: none;
     flex-wrap: wrap;
     .search-box-container {
       order: -1;
       flex-basis: 100%;
-      padding:10px;
+      padding: 10px;
       background-color: white;
       margin: 10px auto;
       display: flex;
-      input{
-        background: #f3f3f3
-      }
+      border: none;
+      input,
       i {
-        background:#f3f3f3
+        background: $light-grey-color;
       }
     }
     .type-tab {

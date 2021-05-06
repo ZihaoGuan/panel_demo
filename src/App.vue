@@ -1,12 +1,14 @@
 <template>
   <div id="app">
     <Header @toggleNavBar="toggleNavBar" />
-    <Agent :showNavBar="this.showNavBar" @closeNavBar="closeNavBar"/>
+    <Agent :showNavBar="this.showNavBar" @closeNavBar="closeNavBar" />
     <Footer />
+    <div :class="{ cover:  agentShowPopUp}"></div>
   </div>
 </template>
 
 <script lang="ts">
+import { mapState } from "vuex";
 import Agent from "./views/Agent.vue";
 import Footer from "./components/Footer.vue";
 import Header from "./components/Header.vue";
@@ -19,17 +21,21 @@ export default Vue.extend({
     Footer,
     Header,
   },
+  computed: {
+    ...mapState("agents", ["agentShowPopUp"]),
+  },
   methods: {
     toggleNavBar() {
-      this.showNavBar = !this.showNavBar
+      this.showNavBar = !this.showNavBar;
     },
-    closeNavBar(){
-      this.showNavBar = false
-    }
+    closeNavBar() {
+      this.showNavBar = false;
+    },
   },
   data() {
     return {
       showNavBar: false,
+      //coverOn: false,
     };
   },
 });
@@ -38,6 +44,19 @@ export default Vue.extend({
 <style lang="scss">
 body {
   background-color: $dark-grey-color;
+}
+
+@media only screen and (max-width: $desktop-size) {
+  .cover {
+    background: black;
+    opacity: 0.3;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    top: 0;
+    left: 0;
+  }
 }
 
 //default setting
