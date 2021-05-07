@@ -54,10 +54,10 @@
         <i class="icomoon icon-search i-20"></i>
         <input class="search-box" />
       </div>
-      <div class="layout-tab" style="margin-left: auto">
+      <div class="layout-tab leftmost">
         <i class="icomoon icon-th-card btn"></i>
       </div>
-      <div class="layout-tab active" style="margin-right: 10px">
+      <div class="layout-tab rightmost active">
         <i class="icomoon icon-th-list btn"></i>
       </div>
     </div>
@@ -196,6 +196,14 @@ export default Vue.extend({
     padding: 0 0.5em;
     &.active i {
       color: $light-cyan-color;
+    }
+
+    &.leftmost{
+      margin-left: auto;
+    }
+
+    &.rightmost{
+      margin-right: 1em;
     }
   }
 }
