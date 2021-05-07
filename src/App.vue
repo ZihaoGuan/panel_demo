@@ -13,10 +13,10 @@
 </template>
 
 <script lang="ts">
-import Agent from "./views/Agent.vue";
-import Footer from "./components/Footer.vue";
-import Header from "./components/Header.vue";
-import Navbar from "./components/Navbar.vue";
+import Agent from "./pages/agent/Agent.vue";
+import Footer from "./common/Footer.vue";
+import Header from "./common/Header.vue";
+import Navbar from "./common/Navbar.vue";
 
 import { Component, Vue } from "vue-property-decorator";
 import { Getter } from "vuex-class";

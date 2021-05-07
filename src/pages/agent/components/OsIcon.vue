@@ -13,15 +13,15 @@ export default Vue.extend({
     imageSource: function () {
       switch (this.os) {
         case "windows":
-          return require("../assets/os-icons/windows.png");
+          return require("@/assets/os-icons/windows.png");
         case "ubuntu":
-          return require("../assets/os-icons/ubuntu.png");
+          return require("@/assets/os-icons/ubuntu.png");
         case "suse":
-          return require("../assets/os-icons/suse.png");
+          return require("@/assets/os-icons/suse.png");
         case "debian":
-          return require("../assets/os-icons/debin.png");
+          return require("@/assets/os-icons/debin.png");
         case "centos":
-          return require("../assets/os-icons/cent_os.png");
+          return require("@/assets/os-icons/cent_os.png");
         default:
           return "";
       }

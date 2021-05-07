@@ -71,8 +71,8 @@
 
 <script lang="ts">
 import { mapGetters } from "vuex";
-import AgentItem from "../components/AgentItem.vue";
-import TypeTab from "../components/TypeTab.vue";
+import AgentItem from "./components/AgentItem.vue";
+import TypeTab from "./components/TypeTab.vue";
 
 import Vue from "vue";
 export default Vue.extend({

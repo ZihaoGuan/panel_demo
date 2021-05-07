@@ -10,7 +10,7 @@ export default new Router({
         {
             path: '/',
             name: 'home',
-            component: () => import( '../views/Home.vue'),
+            component: () => import( '../pages/home/Home.vue'),
         },
         {
             path: '/agent',
@@ -18,17 +18,17 @@ export default new Router({
             // route level code-splitting
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
-            component: () => import( '../views/Agent.vue'),
+            component: () => import( '../pages/agent/Agent.vue'),
         },
         {
             path: '/cruise',
             name: 'cruise',
-            component: () => import( '../views/Cruise.vue'),
+            component: () => import( '../pages/cruise/Cruise.vue'),
         },
         {
             path: '/help',
             name: 'help',
-            component: () => import( '../views/Help.vue'),
+            component: () => import( '../pages/help/Help.vue'),
         },
     ],
 });
