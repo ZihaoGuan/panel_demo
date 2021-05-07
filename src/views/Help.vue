@@ -1,5 +1,8 @@
 <template>
-  <h1>Help</h1>
+  <article>
+    <h1>Help</h1>
+    <p>please got to agent page</p>
+  </article>
 </template>
 
 <script lang="ts">

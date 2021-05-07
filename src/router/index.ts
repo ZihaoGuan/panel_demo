@@ -21,12 +21,12 @@ export default new Router({
             component: () => import( '../views/Agent.vue'),
         },
         {
-            path: '/',
-            name: 'cruis',
+            path: '/cruise',
+            name: 'cruise',
             component: () => import( '../views/Cruise.vue'),
         },
         {
-            path: '/',
+            path: '/help',
             name: 'help',
             component: () => import( '../views/Help.vue'),
         },
