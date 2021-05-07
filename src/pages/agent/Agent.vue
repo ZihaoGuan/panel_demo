@@ -62,9 +62,11 @@
       </div>
     </div>
     <div class="item-agents">
-      <div v-for="agent in getAgentsByType(tab)" :key="agent.id">
-        <AgentItem :agent="agent"></AgentItem>
-      </div>
+      <AgentItem
+        v-for="agent in getAgentsByType(tab)"
+        :key="agent.id"
+        :agent="agent"
+      ></AgentItem>
     </div>
   </div>
 </template>
@@ -288,5 +290,4 @@ export default Vue.extend({
   100%
     -webkit-transform: rotate(360deg)
     transform: rotate(360deg)
-
 </style>
