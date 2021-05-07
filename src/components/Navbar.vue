@@ -4,22 +4,22 @@
       <i class="icomoon icon-close"></i>
     </div>
     <div class="tab-container">
-      <a class="tab">
+      <router-link to="/" :class="'tab'">
         <i class="icomoon icon-dashboard"></i>
         <span>DASHBOARD</span>
-      </a>
-      <a class="tab active">
+      </router-link>
+      <router-link to="/agent" :class="'tab'">
         <i class="icomoon icon-sitemap"></i>
         <span>AGENT</span>
-      </a>
-      <a class="tab">
+      </router-link>
+      <router-link to="/cruise" :class="'tab'">
         <i class="icomoon icon-boat"></i>
         <span>MY CRUISE</span>
-      </a>
-      <a class="tab">
+      </router-link>
+      <router-link to="/help" :class="'tab'">
         <i class="icomoon icon-life-bouy"></i>
         <span>HELP</span>
-      </a>
+      </router-link>
     </div>
   </nav>
 </template>
@@ -45,6 +45,10 @@ nav {
   width: $navbar-width;
   top: 0;
   padding-top: $header-height;
+
+  a{
+    text-decoration: none;
+  }
 
   .btn-close {
     position: absolute;
@@ -78,7 +82,7 @@ nav {
         color: white;
       }
 
-      &.active,
+      &.router-link-exact-active,
       &:hover {
         color: $light-cyan-color;
         background-color: $dimgray-color;
