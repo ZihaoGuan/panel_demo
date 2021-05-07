@@ -10,5 +10,5 @@ import Vue from "vue";
 export default Vue.extend({ name: "Help" });
 </script>
 
-<style lang="scss" scoped>
+<style lang="sass" scoped>
 </style>

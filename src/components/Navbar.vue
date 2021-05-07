@@ -39,69 +39,63 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss" scoped>
-nav {
-  position: fixed;
-  width: $navbar-width;
-  top: 0;
-  padding-top: $header-height;
+<style lang="sass" scoped>
+nav
+  position: fixed
+  width: $navbar-width
+  top: 0
+  padding-top: $header-height
 
-  a{
-    text-decoration: none;
-  }
+  a
+    text-decoration: none
 
-  .btn-close {
-    position: absolute;
-    right: 1.5rem;
-    top: 1.2rem;
-    i {
-      color: $light-cyan_color;
-      font-size: 24px;
-    }
-  }
+  .btn-close
+    position: absolute
+    right: 1.5rem
+    top: 1.2rem
 
-  .tab-container {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    .tab {
-      display: flex;
-      height: 45px;
-      padding-left: 1.5em;
-      cursor: pointer;
-      align-items: center;
-      margin: 1em 0;
-      span {
-        margin-left: 1.5em;
-      }
-      i {
-        font-size: 30px;
-      }
+    i
+      color: $light-cyan_color
+      font-size: 24px
+
+  .tab-container
+    position: sticky
+    top: 0
+    height: 100vh
+
+    .tab
+      display: flex
+      height: 45px
+      padding-left: 1.5em
+      cursor: pointer
+      align-items: center
+      margin: 1em 0
+
+      span
+        margin-left: 1.5em
+
+      i
+        font-size: 30px
+
       i,
-      span {
-        color: white;
-      }
+      span
+        color: white
 
       &.router-link-exact-active,
-      &:hover {
-        color: $light-cyan-color;
-        background-color: $dimgray-color;
-        i,
-        span {
-          color: $light-cyan-color;
-        }
-      }
-    }
-  }
-}
+      &:hover
+        color: $light-cyan-color
+        background-color: $dimgray-color
 
-@media only screen and (max-width: $desktop-size) {
-  nav {
-    z-index: 101;
-    display: none;
-    &.show {
-      display: block;
-    }
-  }
-}
+        i,
+        span
+          color: $light-cyan-color
+
+@media only screen and (max-width: $desktop-size)
+  nav
+    z-index: 101
+    display: none
+
+    &.show
+      display: block
+
 </style>

@@ -25,10 +25,7 @@
             class="icomoon icon-plus i-16 btn"
             @click="showAgentListPopUpDialog(agent.id)"
           ></i>
-          <PopupDialog
-            :show="agent.id == agentShowPopUp"
-            :id="agent.id"
-          />
+          <PopupDialog :show="agent.id == agentShowPopUp" :id="agent.id" />
         </div>
         <div
           v-for="resource in agent.resources"
@@ -77,119 +74,100 @@ export default Vue.extend({
   },
 });
 </script>
-<style lang="scss" scoped>
-.item {
-  display: flex;
-  flex-direction: row;
-  margin: 1.2rem;
-  padding: 0.8rem;
-}
+<style lang="sass" scoped>
+.item
+  display: flex
+  flex-direction: row
+  margin: 1.2rem
+  padding: 0.8rem
 
-.popup {
-  position: relative;
-}
+.popup
+  position: relative
 
-.row {
-  padding: 0.5em 1em;
-}
+.row
+  padding: 0.5em 1em
 
-.row-1 i {
-  color: grey;
-  margin-right: 0.5em;
-  vertical-align: middle;
-}
+.row-1 i
+  color: grey
+  margin-right: 0.5em
+  vertical-align: middle
 
-.row-2 {
-  flex-wrap: wrap;
-  .btn-square {
-    margin-top: 0.5em;
-    margin-bottom: 0.1em;
-  }
-}
+.row-2
+  flex-wrap: wrap
 
-.column {
-  width: 100%;
-  justify-content: space-between;
-}
+  .btn-square
+    margin-top: 0.5em
+    margin-bottom: 0.1em
 
-.btn-square {
-  height: 30px;
-  font-size: 14px;
-  line-height: 30px;
-  text-align: center;
-  padding: 0 0.7em;
-  margin-right: 0.7em;
-}
+.column
+  width: 100%
+  justify-content: space-between
 
-.btn {
-  cursor: pointer;
-}
+.btn-square
+  height: 30px
+  font-size: 14px
+  line-height: 30px
+  text-align: center
+  padding: 0 0.7em
+  margin-right: 0.7em
 
-.btn-delete{
-  background: #efefef;
-}
+.btn
+  cursor: pointer
 
-.btn-square i {
-  height: 30px;
-  vertical-align: middle;
-}
+.btn-delete
+  background: #efefef
 
-.btn-blue {
-  background-color: $light-cyan-color;
-  color: white;
-  i {
-    color: white;
-  }
-  &:hover {
-    background-color: $dark-cyan-color;
-  }
-}
+.btn-square i
+  height: 30px
+  vertical-align: middle
 
-.btn-gray {
-  background-color: $dimgray-color;
-  color: white;
-  i {
-    color: white;
-  }
-  &:hover {
-    background-color: $slategray-color;
-  }
-}
+.btn-blue
+  background-color: $light-cyan-color
+  color: white
 
-.rightmost {
-  margin-left: auto !important;
-  margin-right: 0 !important;
-}
+  i
+    color: white
 
-.building .status {
-  background: $orange-color;
-}
+  &:hover
+    background-color: $dark-cyan-color
 
-.idle .status {
-  background: $green-color;
-}
+.btn-gray
+  background-color: $dimgray-color
+  color: white
 
-.status {
-  margin: 0 1.3em;
-  padding: 0 0.3em;
-}
+  i
+    color: white
 
-.ip{
-margin-right: 1em
-}
+  &:hover
+    background-color: $slategray-color
 
-@media only screen and (max-width: $tablet-size) {
-  .building.item {
-    border-left: 3px solid $orange-color;
-  }
-  .idle.item {
-    border-left: 3px solid $green-color;
-  }
-  .row-1 {
-    flex-direction: column;
-    .status {
-      display: none;
-    }
-  }
-}
+.rightmost
+  margin-left: auto !important
+  margin-right: 0 !important
+
+.building .status
+  background: $orange-color
+
+.idle .status
+  background: $green-color
+
+.status
+  margin: 0 1.3em
+  padding: 0 0.3em
+
+.ip
+  margin-right: 1em
+
+@media only screen and (max-width: $tablet-size)
+  .building.item
+    border-left: 3px solid $orange-color
+
+  .idle.item
+    border-left: 3px solid $green-color
+
+  .row-1
+    flex-direction: column
+
+    .status
+      display: none
 </style>

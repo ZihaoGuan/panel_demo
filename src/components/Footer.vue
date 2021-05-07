@@ -9,21 +9,19 @@ import Vue from "vue";
 export default Vue.extend({ name: "Footer" });
 </script>
 
-<style lang="scss" scoped>
-footer {
-  background-color: white;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  -moz-box-shadow: 0 3px 5px 2px $dark-grey-color;
-  -webkit-box-shadow: 0 3px 5px 2px $dark-grey-color;
-  box-shadow: 0 3px 5px 2px $dark-grey-color;
-}
+<style lang="sass" scoped>
+footer
+  background-color: white
+  position: fixed
+  bottom: 0
+  width: 100%
+  text-align: center
+  -moz-box-shadow: 0 3px 5px 2px $dark-grey-color
+  -webkit-box-shadow: 0 3px 5px 2px $dark-grey-color
+  box-shadow: 0 3px 5px 2px $dark-grey-color
 
-@media only screen and (max-width: $desktop-size) {
-  footer {
-    display: none;
-  }
-}
+@media only screen and (max-width: $desktop-size)
+  footer
+    display: none
+
 </style>

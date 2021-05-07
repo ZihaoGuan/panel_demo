@@ -43,113 +43,89 @@ export default class App extends Vue {
 }
 </script>
 
-<style lang="scss">
-body {
-  background-color: $dark-grey-color;
-}
+<style lang="sass">
+body
+  background-color: $dark-grey-color
 
-.wrapper {
-  max-width: 1200px;
-  margin: auto;
-}
+.wrapper
+  max-width: 1200px
+  margin: auto
 
-main {
-  margin-top: $header-height;
-  padding: 0.5rem;
-}
+main
+  margin-top: $header-height
+  padding: 0.5rem
 
-@media only screen and (min-width: $desktop-size) {
-  main {
-    margin-left: $navbar-width;
-  }
-}
+@media only screen and (min-width: $desktop-size)
+  main
+    margin-left: $navbar-width
 
-@media only screen and (max-width: $desktop-size) {
-  .cover {
-    background: black;
-    opacity: 0.3;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    z-index: 999;
-    top: 0;
-    left: 0;
-  }
-}
+@media only screen and (max-width: $desktop-size)
+  .cover
+    background: black
+    opacity: 0.3
+    position: fixed
+    width: 100vw
+    height: 100vh
+    z-index: 999
+    top: 0
+    left: 0
 
 //default setting
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  color: #2d4054;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-}
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+  color: #2d4054
+  font-family: Avenir, Helvetica, Arial, sans-serif
+  font-size: 14px
 
-.i-16 {
-  font-size: 16px;
-}
+.i-16
+  font-size: 16px
 
-.i-20 {
-  font-size: 20px;
-}
+.i-20
+  font-size: 20px
 
-.white-bg {
-  background-color: white;
-}
+.white-bg
+  background-color: white
 
-.white-text {
-  color: white;
-}
+.white-text
+  color: white
 
-.light-grey-bg {
-  background-color: $light-grey-color;
-}
+.light-grey-bg
+  background-color: $light-grey-color
 
-.dark-grey-bg {
-  background-color: $dark-grey-color;
-}
+.dark-grey-bg
+  background-color: $dark-grey-color
 
-.orange-bg {
-  background-color: $orange-color;
-}
+.orange-bg
+  background-color: $orange-color
 
-.green-bg {
-  background-color: $green-color;
-}
+.green-bg
+  background-color: $green-color
 
-.light-cyan-bg {
-  background-color: $light-cyan-color;
-}
+.light-cyan-bg
+  background-color: $light-cyan-color
 
-.light-cyan-text {
-  color: $light-cyan-color;
-}
+.light-cyan-text
+  color: $light-cyan-color
 
-.dark-cyan-bg {
-  background-color: $dark-cyan-color;
-}
+.dark-cyan-bg
+  background-color: $dark-cyan-color
 
-.slategray-bg {
-  background-color: $slategray-color;
-}
+.slategray-bg
+  background-color: $slategray-color
 
-.dimgray-bg {
-  background-color: $dimgray-color;
-}
+.dimgray-bg
+  background-color: $dimgray-color
 
-.text-center {
-  text-align: center;
-}
+.text-center
+  text-align: center
 
-.column {
-  display: flex;
-  flex-direction: column;
-}
+.column
+  display: flex
+  flex-direction: column
 
-.row {
-  display: flex;
-  flex-direction: row;
-}
+.row
+  display: flex
+  flex-direction: row
 </style>
