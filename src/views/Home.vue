@@ -1,7 +1,7 @@
 <template>
   <article>
     <h1>Home</h1>
-    <p>please got to agent page</p>
+    <p>please go to agent page</p>
   </article>
 </template>
 
