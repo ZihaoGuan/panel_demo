@@ -40,6 +40,16 @@ export default Vue.extend({
     showNavBar() {
       this.$emit("openNavBar");
     },
+    handleScroll() {
+      this.showDropdown = false;
+    },
+  },
+
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
   },
 });
 </script>
