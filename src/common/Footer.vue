@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>&#169; Copyright 2017 <strong>Thought</strong>Works</p>
+    <p>Powered by <strong>VueJs</strong></p>
   </footer>
 </template>
 
