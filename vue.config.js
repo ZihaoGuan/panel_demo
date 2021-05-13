@@ -5,5 +5,8 @@ module.exports = {
                 additionalData: `@import "@/styles/_variables.sass"`
             }
         }
-    }
+    },
+    publicPath: process.env.NODE_ENV === 'production'
+    ? '/cruise/VueJs'
+    : '/'
 };
