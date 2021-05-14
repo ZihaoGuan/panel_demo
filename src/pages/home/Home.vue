@@ -4,7 +4,7 @@
     <p>please go to agent page</p>
     <p>
       Check out
-      <a href="/Cruise/React/">ReactJS version~~~</a>
+      <a href="/Cruise/ReactJs/">ReactJS version~~~</a>
     </p>
   </article>
 </template>
